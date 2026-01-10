@@ -61,7 +61,7 @@ export const Hero: React.FC = () => {
 
         {/* 1. Headline */}
         <h1 className="text-2xl sm:text-3xl md:text-5xl lg:text-6xl font-sans font-black text-white leading-tight mb-6 tracking-tight drop-shadow-2xl max-w-5xl mx-auto animate-fade-in-up text-center px-4" style={{ animationDelay: '100ms' }}>
-          30 Dni, da <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#FFD700] via-[#FDB931] to-[#FFD700] italic pr-1">Kopiraš Moj AI Sistem</span> in Začneš <span className="text-white underline decoration-brand-gold/50 underline-offset-8 decoration-2">Ustvarjati Dohodek</span> v 2026
+          30 Dni, da <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#FFD700] via-[#FDB931] to-[#FFD700] italic pr-2">Kopiraš Moj AI&nbsp;Sistem</span> in Začneš <span className="text-white underline decoration-brand-gold/50 underline-offset-8 decoration-2">Ustvarjati Dohodek</span> v 2026
         </h1>
 
         {/* 2. Subheadline */}

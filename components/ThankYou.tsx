@@ -1,51 +1,9 @@
-import React, { useEffect, useRef } from 'react';
+import React from 'react';
 import { CheckCircle2, Mail, ShieldCheck } from 'lucide-react';
 import { Button } from './Button';
 import { VideoDemo } from './VideoDemo';
 
 export const ThankYou: React.FC = () => {
-  const webhookTriggered = useRef(false);
-
-  useEffect(() => {
-    // Ensure webhook only fires once per page load
-    if (webhookTriggered.current) return;
-    webhookTriggered.current = true;
-
-    const triggerGHLWebhook = async () => {
-      try {
-        // Extract email and other info from URL query params if present
-        // (Assumes Stripe is configured to redirect with ?email={customer_email})
-        const searchParams = new URLSearchParams(window.location.search);
-        const email = searchParams.get('email');
-        const name = searchParams.get('name') || searchParams.get('customer_name');
-        
-        // Payload construction
-        const payload = {
-          email: email || undefined,
-          name: name || undefined,
-          event: "purchase_success",
-          source: "aiuniverza.si",
-          timestamp: new Date().toISOString()
-        };
-
-        // GHL Inbound Webhook
-        await fetch("https://services.leadconnectorhq.com/hooks/TGsyH70nsz7y3hijuqTn/webhook-trigger/a9e48390-6ba0-493d-a25b-71956b37e3f9", {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json"
-          },
-          body: JSON.stringify(payload)
-        });
-        
-        console.log("Welcome flow webhook triggered successfully.");
-      } catch (error) {
-        console.error("Error triggering welcome flow webhook:", error);
-      }
-    };
-
-    triggerGHLWebhook();
-  }, []);
-
   return (
     <div className="min-h-screen bg-black flex flex-col items-center justify-center p-4 relative overflow-hidden py-20">
       {/* Background Effects */}

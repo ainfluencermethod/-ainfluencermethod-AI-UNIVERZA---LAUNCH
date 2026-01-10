@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Zap, Lock, Settings, Monitor, CreditCard, CheckCircle, X, Scale, Webhook } from 'lucide-react';
+import { Zap, Lock, Settings, Monitor, CreditCard, CheckCircle, X, Scale } from 'lucide-react';
 import { Hero } from './components/Hero';
 import { SocialProof } from './components/SocialProof';
 import { Reviews } from './components/Reviews';
@@ -68,30 +68,6 @@ const App: React.FC = () => {
     safePushState('/?step=success');
   };
 
-  const triggerTestWebhook = async () => {
-    try {
-        const payload = {
-            email: "test_demo_user@example.com",
-            name: "Test Demo User",
-            event: "purchase_success",
-            source: "aiuniverza.si",
-            timestamp: new Date().toISOString()
-        };
-
-        await fetch("https://services.leadconnectorhq.com/hooks/TGsyH70nsz7y3hijuqTn/webhook-trigger/a9e48390-6ba0-493d-a25b-71956b37e3f9", {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json"
-            },
-            body: JSON.stringify(payload)
-        });
-        alert("Test webhook poslan! Preveri 'Fetch Sample Requests' v GHL.");
-    } catch (error) {
-        console.error("Webhook error:", error);
-        alert("Napaka pri pošiljanju webhooka.");
-    }
-  };
-
   return (
     <>
       {currentStep === 'rules' && <SweepstakesRules />}
@@ -125,7 +101,7 @@ const App: React.FC = () => {
               <ScrollReveal delay={0} duration={1000} yOffset={40} threshold={0.2}>
                   <div className="py-12 text-center max-w-4xl mx-auto px-6">
                       <p className="text-xl md:text-2xl text-gray-300 leading-relaxed font-light font-serif italic">
-                          To niso "guruji". To so študenti, frizerke, inženirji in brezposelni, ki so zgrabili priložnost in ustvarili več kot
+                          To niso "spletni guruji". To so študenti, frizerke, inženirji in popolni začetniki, ki so sledili sistemu in ustvarili več kot
                           <span className="text-white font-bold border-b border-brand-gold not-italic font-sans"> 50.000€ v manj kot 30 dneh.</span>
                       </p>
                       <p className="text-gray-500 mt-6 text-sm font-bold uppercase tracking-wide font-sans">
@@ -164,10 +140,6 @@ const App: React.FC = () => {
               </ScrollReveal>
 
               <ScrollReveal>
-                  <Comparison />
-              </ScrollReveal>
-              
-              <ScrollReveal>
                   <Founders />
               </ScrollReveal>
 
@@ -183,6 +155,10 @@ const App: React.FC = () => {
               
               <ScrollReveal>
                   <Guarantee />
+              </ScrollReveal>
+
+              <ScrollReveal>
+                  <Comparison />
               </ScrollReveal>
 
               <ScrollReveal>
@@ -204,7 +180,7 @@ const App: React.FC = () => {
                       <div className="flex-1">
                           <p className="text-red-500 text-[10px] font-black uppercase tracking-wider mb-0.5 flex items-center gap-1 animate-pulse">
                               <span className="w-1.5 h-1.5 rounded-full bg-red-500"></span> 
-                              Zadnja mesta za generacijo!
+                              OMEJENA MESTA!
                           </p>
                           <div className="flex items-baseline gap-2">
                               <span className="text-brand-gold font-black text-xl">497€<span className="text-xs font-normal text-white/60 ml-1">/ leto</span></span>
@@ -278,15 +254,6 @@ const App: React.FC = () => {
                   className={`flex items-center gap-3 px-3 py-2 rounded-lg text-xs font-medium transition-colors ${currentStep === 'success' ? 'bg-green-500/10 text-green-400' : 'text-gray-300 hover:bg-white/5 hover:text-white'}`}
                >
                   <CheckCircle size={14} /> Thank You Page
-               </button>
-               
-               <div className="h-px bg-white/10 my-1"></div>
-
-               <button 
-                  onClick={triggerTestWebhook}
-                  className="flex items-center gap-3 px-3 py-2 rounded-lg text-xs font-medium text-blue-400 hover:bg-blue-500/10 transition-colors"
-               >
-                  <Webhook size={14} /> Test GHL Webhook
                </button>
             </div>
           </div>

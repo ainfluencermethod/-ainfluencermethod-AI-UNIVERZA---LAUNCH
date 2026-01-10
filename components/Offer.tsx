@@ -98,12 +98,12 @@ export const Offer: React.FC = () => {
                                 <Star className="text-black w-6 h-6 fill-black" />
                             </div>
                              <div className="flex-1 relative z-10">
-                                 <div className="flex justify-between items-start">
-                                     <h3 className="font-bold text-lg text-black leading-tight flex items-center gap-2">
+                                 <div className="flex flex-col sm:flex-row sm:justify-between sm:items-start gap-1 sm:gap-0">
+                                     <h3 className="font-bold text-lg text-black leading-tight flex flex-wrap items-center gap-2">
                                          Vstopnica za 15.000€ Sklad
-                                         <span className="bg-brand-gold text-black text-[10px] px-2 py-0.5 rounded font-black uppercase shadow-sm">Bonus</span>
+                                         <span className="bg-brand-gold text-black text-[10px] px-2 py-0.5 rounded font-black uppercase shadow-sm whitespace-nowrap">Bonus</span>
                                      </h3>
-                                     <span className="font-mono font-bold text-[#b8860b] text-sm uppercase tracking-wider">Neprecenljivo</span>
+                                     <span className="font-mono font-bold text-[#b8860b] text-xs sm:text-sm uppercase tracking-wider mt-1 sm:mt-0">Neprecenljivo</span>
                                  </div>
                                  <p className="text-xs text-[#856404] mt-1 font-medium">Avtomatska udeležba v žrebanju za Rolex in Apple nagrade.</p>
                              </div>

@@ -7,7 +7,8 @@ export const Challenge: React.FC = () => {
       id: 1,
       title: "11. - 17. JANUAR: Štart 2026",
       subtitle: "Iniciacija & Strategija",
-      icon: <Rocket className="w-6 h-6 text-white" />,
+      Icon: Rocket,
+      iconClass: "text-white",
       tasks: [
         "Izbira niše (Trendi 2026)",
         "Postavitev AI 'Fasade'",
@@ -20,7 +21,8 @@ export const Challenge: React.FC = () => {
       id: 2,
       title: "18. - 24. JANUAR: Validacija",
       subtitle: "Testiranje Trga",
-      icon: <Zap className="w-6 h-6 text-white" />,
+      Icon: Zap,
+      iconClass: "text-white",
       tasks: [
         "Viralna strategija objav",
         "Testiranje 3 različnih 'hookov'",
@@ -33,7 +35,8 @@ export const Challenge: React.FC = () => {
       id: 3,
       title: "25. - 31. JANUAR: Profit",
       subtitle: "Prvi Evri",
-      icon: <DollarSign className="w-6 h-6 text-white" />,
+      Icon: DollarSign,
+      iconClass: "text-white",
       tasks: [
         "Launch digitalnega produkta",
         "Nastavitev prodajnega lijaka",
@@ -46,7 +49,8 @@ export const Challenge: React.FC = () => {
       id: 4,
       title: "1. - 10. FEBRUAR: Skaliranje",
       subtitle: "Dominacija Leta",
-      icon: <Trophy className="w-6 h-6 text-brand-gold" />,
+      Icon: Trophy,
+      iconClass: "text-brand-gold",
       tasks: [
         "Avtomatizacija procesov",
         "Uradni Launch za 2026",
@@ -67,13 +71,13 @@ export const Challenge: React.FC = () => {
 
         <div className="max-w-7xl mx-auto relative z-10">
             <div className="text-center mb-16">
-                <div className="inline-flex items-center gap-2 bg-gradient-to-r from-yellow-900/40 to-black border border-yellow-700/30 rounded-full px-4 py-1.5 mb-6 animate-fade-in backdrop-blur-md">
+                <div className="inline-flex items-center gap-2 bg-gradient-to-r from-yellow-900/40 to-black border border-yellow-700/30 rounded-full px-4 py-1.5 mb-6 animate-fade-in-up backdrop-blur-md">
                     <Sparkles className="w-4 h-4 text-brand-gold animate-pulse" />
                     <span className="text-brand-gold text-xs font-black uppercase tracking-widest">New Year, Rich Me</span>
                 </div>
                 
                 <h2 className="text-4xl md:text-6xl font-serif font-black text-white mb-6 leading-tight">
-                    Tvoj <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-gold via-yellow-200 to-brand-gold italic">Načrt za 2026</span>
+                    Tvoj <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-gold via-yellow-200 to-brand-gold italic pr-2">Načrt za 2026</span>
                 </h2>
                 <p className="text-gray-400 max-w-2xl mx-auto text-lg">
                     Pozabi na ponesrečene novoletne zaobljube. Tukaj je matematično dokazan sistem, kako boš 
@@ -81,25 +85,34 @@ export const Challenge: React.FC = () => {
                 </p>
             </div>
 
-            <div className="grid md:grid-cols-4 gap-6 relative">
+            <div className="grid md:grid-cols-4 gap-8 md:gap-6 relative">
                 {/* Connecting Line (Desktop) */}
                 <div className="hidden md:block absolute top-12 left-0 w-full h-1 bg-gradient-to-r from-brand-gold via-gray-800 to-gray-800 z-0"></div>
 
-                {weeks.map((week, index) => (
-                    <div key={week.id} className="relative z-10 group">
+                {/* Connecting Line (Mobile) */}
+                <div className="md:hidden absolute top-10 bottom-10 left-1/2 -translate-x-1/2 w-0.5 bg-gradient-to-b from-brand-gold via-gray-800 to-gray-800 z-0 opacity-50"></div>
+
+                {weeks.map((week, index) => {
+                    const Icon = week.Icon;
+                    return (
+                    <div key={week.id} className="relative z-10 group flex flex-col items-center">
                         {/* Icon Node */}
-                        <div className={`w-24 h-24 mx-auto rounded-full border-4 flex items-center justify-center mb-6 bg-dark-bg transition-transform duration-300 group-hover:scale-110 relative ${week.active ? 'border-brand-gold shadow-[0_0_30px_rgba(255,215,0,0.3)]' : 'border-gray-800'}`}>
+                        <div className={`w-20 h-20 md:w-24 md:h-24 mx-auto rounded-full border-4 flex items-center justify-center mb-6 bg-dark-bg transition-transform duration-300 group-hover:scale-110 relative ${week.active ? 'border-brand-gold shadow-[0_0_30px_rgba(255,215,0,0.3)]' : 'border-gray-800'} z-10`}>
                             {week.active && <div className="absolute inset-0 bg-brand-gold/20 rounded-full animate-ping opacity-20"></div>}
-                            {week.icon}
+                            
+                            <div className="transform transition-transform duration-300">
+                                <Icon className={`w-6 h-6 md:w-8 md:h-8 ${week.iconClass}`} />
+                            </div>
+                            
                             {week.highlight && (
-                                <div className="absolute -top-2 -right-2 bg-green-600 text-white text-[10px] font-bold px-2 py-1 rounded-full border border-dark-bg">
+                                <div className="absolute -top-2 -right-2 bg-green-600 text-white text-[10px] font-bold px-2 py-1 rounded-full border border-dark-bg shadow-sm z-20">
                                     $$$
                                 </div>
                             )}
                         </div>
 
                         {/* Card */}
-                        <div className={`bg-card-bg border ${week.active ? 'border-brand-gold/50 bg-gradient-to-b from-brand-gold/5 to-transparent' : 'border-white/5'} rounded-2xl p-6 h-full hover:border-brand-gold/30 transition-all duration-300 group-hover:-translate-y-1`}>
+                        <div className={`w-full bg-card-bg border ${week.active ? 'border-brand-gold/50 bg-gradient-to-b from-brand-gold/5 to-transparent' : 'border-white/5'} rounded-2xl p-6 h-full hover:border-brand-gold/30 transition-all duration-300 group-hover:-translate-y-1 relative z-10`}>
                             <div className="flex justify-between items-start mb-2">
                                 <span className={`text-[10px] font-black uppercase tracking-widest ${week.active ? 'text-brand-gold' : 'text-gray-600'} flex items-center gap-1`}>
                                     <Calendar size={10} />
@@ -123,7 +136,7 @@ export const Challenge: React.FC = () => {
                             </ul>
                         </div>
                     </div>
-                ))}
+                )})}
             </div>
 
             {/* 2026 Trend Insight */}
