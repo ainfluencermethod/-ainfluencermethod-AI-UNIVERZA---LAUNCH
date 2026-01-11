@@ -50,7 +50,10 @@ export const Hero: React.FC = () => {
             <div className="absolute -inset-1 bg-brand-gold/50 rounded-[2rem] blur-3xl animate-pulse-slow"></div>
             
             <div className="relative rounded-xl md:rounded-[1.5rem] overflow-hidden border border-white/10 shadow-[0_0_50px_-10px_rgba(0,0,0,0.7)] bg-black z-10">
-                 <VideoDemo />
+                 <VideoDemo 
+                    videoId="ew9yvthesh" 
+                    thumbnailUrl="https://storage.googleapis.com/msgsndr/TGsyH70nsz7y3hijuqTn/media/6963c0c9c7683b678fa18494.webp" 
+                 />
             </div>
         </div>
 

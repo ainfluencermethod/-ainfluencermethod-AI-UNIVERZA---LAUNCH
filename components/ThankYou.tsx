@@ -34,7 +34,7 @@ export const ThankYou: React.FC = () => {
             <div className="absolute -inset-1 bg-gradient-to-b from-green-500/30 to-transparent rounded-[2rem] blur-xl opacity-50 group-hover:opacity-75 transition duration-1000"></div>
             
             <div className="relative rounded-xl md:rounded-[1.5rem] overflow-hidden border border-white/10 shadow-2xl bg-black z-10">
-                 <VideoDemo />
+                 <VideoDemo videoId="omlm9gyasa" />
             </div>
             <p className="mt-4 text-sm text-gray-500 uppercase tracking-widest font-bold animate-pulse">
                 👇 Oglej si pomembna navodila spodaj 👇

@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Zap, Lock, Settings, Monitor, CreditCard, CheckCircle, X, Scale } from 'lucide-react';
+import { Zap, Lock, Monitor, CreditCard, CheckCircle, X, Scale } from 'lucide-react';
 import { Hero } from './components/Hero';
 import { SocialProof } from './components/SocialProof';
 import { Reviews } from './components/Reviews';
@@ -211,50 +211,6 @@ const App: React.FC = () => {
           </div>
         </div>
       )}
-
-      {/* Dev Menu */}
-      <div className="fixed bottom-6 left-6 z-[9999] font-sans print:hidden hidden md:block">
-        <div className="group relative">
-          <div className="bg-black/40 backdrop-blur-lg border border-white/10 p-2.5 rounded-full cursor-pointer hover:bg-black/60 transition-all shadow-2xl hover:border-brand-gold/50 text-white">
-             <Settings size={18} className="animate-[spin_10s_linear_infinite]" />
-          </div>
-          
-          <div className="absolute bottom-full left-0 mb-3 flex flex-col gap-2 opacity-0 translate-y-4 invisible group-hover:visible group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300 w-48">
-            <div className="bg-black/90 backdrop-blur-xl border border-white/10 rounded-xl p-2 shadow-2xl flex flex-col gap-1">
-               <div className="px-2 py-1 text-[10px] uppercase font-bold text-gray-500 tracking-wider">Preview Mode</div>
-               
-               <button 
-                  onClick={() => { setCurrentStep('landing'); safePushState('/'); }}
-                  className={`flex items-center gap-3 px-3 py-2 rounded-lg text-xs font-medium transition-colors ${currentStep === 'landing' ? 'bg-white/10 text-brand-gold' : 'text-gray-300 hover:bg-white/5 hover:text-white'}`}
-               >
-                  <Monitor size={14} /> Landing Page
-               </button>
-
-               <button 
-                  onClick={() => { setCurrentStep('rules'); safePushState('/?step=rules'); }}
-                  className={`flex items-center gap-3 px-3 py-2 rounded-lg text-xs font-medium transition-colors ${currentStep === 'rules' ? 'bg-white/10 text-brand-gold' : 'text-gray-300 hover:bg-white/5 hover:text-white'}`}
-               >
-                  <Scale size={14} /> Pravila Igre
-               </button>
-
-               <button 
-                  onClick={() => { setCurrentStep('upsell'); safePushState('/?step=upsell'); }}
-                  className={`flex items-center gap-3 px-3 py-2 rounded-lg text-xs font-medium transition-colors ${currentStep === 'upsell' ? 'bg-white/10 text-brand-gold' : 'text-gray-300 hover:bg-white/5 hover:text-white'}`}
-               >
-                  <CreditCard size={14} /> Upsell Page (OTO)
-               </button>
-
-               <button 
-                  onClick={() => { setCurrentStep('success'); safePushState('/?step=success'); }}
-                  className={`flex items-center gap-3 px-3 py-2 rounded-lg text-xs font-medium transition-colors ${currentStep === 'success' ? 'bg-green-500/10 text-green-400' : 'text-gray-300 hover:bg-white/5 hover:text-white'}`}
-               >
-                  <CheckCircle size={14} /> Thank You Page
-               </button>
-            </div>
-          </div>
-        </div>
-      </div>
-
     </>
   );
 };

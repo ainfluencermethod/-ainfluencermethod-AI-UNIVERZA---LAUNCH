@@ -1,12 +1,15 @@
 import React, { useEffect, useState, useRef } from 'react';
 import { VolumeX, Volume2, Play } from 'lucide-react';
 
-export const VideoDemo: React.FC = () => {
+interface VideoDemoProps {
+  videoId: string;
+  thumbnailUrl?: string;
+}
+
+export const VideoDemo: React.FC<VideoDemoProps> = ({ videoId, thumbnailUrl }) => {
   const [isInitialOverlayActive, setIsInitialOverlayActive] = useState(true);
   const [isMuted, setIsMuted] = useState(true);
   const wistiaApiRef = useRef<any>(null);
-  const videoId = "ew9yvthesh";
-  const thumbnailUrL = "https://storage.googleapis.com/msgsndr/TGsyH70nsz7y3hijuqTn/media/6963c0c9c7683b678fa18494.webp";
 
   useEffect(() => {
     // Inject Wistia main script
@@ -52,7 +55,7 @@ export const VideoDemo: React.FC = () => {
         wistiaApiRef.current.remove();
       }
     };
-  }, []);
+  }, [videoId]);
 
   const handleStartWithSound = (e: React.MouseEvent) => {
     e.preventDefault();
@@ -142,7 +145,7 @@ export const VideoDemo: React.FC = () => {
         <div 
           onClick={handleStartWithSound}
           className="absolute inset-0 z-[60] cursor-pointer flex flex-col items-center justify-center transition-all duration-500 hover:bg-black/20 backdrop-blur-[1px] bg-cover bg-center"
-          style={{ backgroundImage: `linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('${thumbnailUrL}')` }}
+          style={thumbnailUrl ? { backgroundImage: `linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('${thumbnailUrl}')` } : { backgroundColor: 'rgba(0,0,0,0.7)' }}
         >
           {/* Top Yellow Pill - "KLIKNI ZA ZVOK" */}
           <div className="absolute top-8 left-1/2 -translate-x-1/2 z-40">
