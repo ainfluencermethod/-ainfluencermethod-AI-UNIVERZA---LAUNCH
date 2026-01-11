@@ -9,6 +9,9 @@ import { Objections } from './components/Objections';
 import { Process } from './components/Process';
 import { Sweepstakes } from './components/Sweepstakes';
 import { SweepstakesRules } from './components/SweepstakesRules';
+import { PrivacyPolicy } from './components/PrivacyPolicy';
+import { TermsAndConditions } from './components/TermsAndConditions';
+import { Contact } from './components/Contact';
 import { Founders } from './components/Founders';
 import { Paths } from './components/Paths';
 import { Challenge } from './components/Challenge';
@@ -23,7 +26,7 @@ import { CountdownTimer } from './components/CountdownTimer';
 import { Button } from './components/Button';
 import { CheckoutForm } from './components/CheckoutForm';
 
-type AppStep = 'landing' | 'upsell' | 'success' | 'rules';
+type AppStep = 'landing' | 'upsell' | 'success' | 'rules' | 'privacy' | 'terms' | 'contact';
 
 const App: React.FC = () => {
   const [currentStep, setCurrentStep] = useState<AppStep>('landing');
@@ -35,14 +38,17 @@ const App: React.FC = () => {
     const query = new URLSearchParams(window.location.search);
     const step = query.get('step');
 
-    // Added check for 'step=rules' to support static hosting without URL rewrites
     if (path === '/pravila' || step === 'rules') {
         setCurrentStep('rules');
+    } else if (path === '/zasebnost' || step === 'privacy') {
+        setCurrentStep('privacy');
+    } else if (path === '/pogoji' || step === 'terms') {
+        setCurrentStep('terms');
+    } else if (path === '/kontakt' || step === 'contact') {
+        setCurrentStep('contact');
     } else if (step === 'upsell') {
-      // Main product purchased -> Show Upsell OTO Page
       setCurrentStep('upsell');
     } else if (step === 'success') {
-      // Flow complete -> Show Thank You Page
       setCurrentStep('success');
     }
   }, []);
@@ -55,22 +61,27 @@ const App: React.FC = () => {
     }
   };
 
+  const navigateTo = (step: AppStep) => {
+    setCurrentStep(step);
+    safePushState(`/?step=${step}`);
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
   const handleUpsellAccept = () => {
-    // Upsell logic placeholder (Payment link removed)
     console.log("Upsell accepted");
   };
 
   const handleUpsellDecline = () => {
-    // User skipped upsell, go straight to success
     setCurrentStep('success');
-    // Clean URL
     safePushState('/?step=success');
   };
 
   return (
     <>
       {currentStep === 'rules' && <SweepstakesRules />}
-
+      {currentStep === 'privacy' && <PrivacyPolicy />}
+      {currentStep === 'terms' && <TermsAndConditions />}
+      {currentStep === 'contact' && <Contact />}
       {currentStep === 'success' && <ThankYou />}
 
       {currentStep === 'upsell' && (
@@ -83,7 +94,6 @@ const App: React.FC = () => {
       {currentStep === 'landing' && (
         <div className="min-h-screen bg-dark-bg text-white font-sans selection:bg-brand-gold selection:text-black pb-24 md:pb-0 relative overflow-x-hidden">
           
-          {/* Global Parallax Background */}
           <ParallaxBackground />
 
           <div className="relative z-10 w-full overflow-hidden">
@@ -91,12 +101,10 @@ const App: React.FC = () => {
               
               <Hero />
               
-              {/* Quick Reveal for Social Proof - Needs to be seen fast */}
               <ScrollReveal delay={0} duration={600} yOffset={20}>
                   <SocialProof />
               </ScrollReveal>
               
-              {/* Heavy Text Statement - Slower, more dramatic */}
               <ScrollReveal delay={0} duration={1000} yOffset={40} threshold={0.2}>
                   <div className="py-12 text-center max-w-4xl mx-auto px-6">
                       <p className="text-xl md:text-2xl text-gray-300 leading-relaxed font-light font-serif italic">
@@ -109,7 +117,6 @@ const App: React.FC = () => {
                   </div>
               </ScrollReveal>
 
-              {/* Reviews - Fast reveal to keep momentum */}
               <ScrollReveal delay={0} duration={700}>
                   <Reviews />
               </ScrollReveal>
@@ -142,12 +149,10 @@ const App: React.FC = () => {
                   <Founders />
               </ScrollReveal>
 
-              {/* Sweepstakes needs attention */}
               <ScrollReveal duration={900} yOffset={40}>
                   <Sweepstakes />
               </ScrollReveal>
 
-              {/* Final Offer / CTA Section - Grand Entrance */}
               <ScrollReveal duration={1000} yOffset={50} threshold={0.1}>
                   <Offer />
               </ScrollReveal>
@@ -163,9 +168,9 @@ const App: React.FC = () => {
               <footer className="text-center py-12 text-gray-600 text-sm bg-black border-t border-gray-900 relative z-10">
                   <p className="mb-4">© 2026 AI Univerza.</p>
                   <div className="flex justify-center gap-4 underline">
-                      <a href="#">Pogoji</a>
-                      <a href="#">Zasebnost</a>
-                      <a href="#">Kontakt</a>
+                      <button onClick={() => navigateTo('terms')} className="hover:text-brand-gold transition-colors">Pogoji</button>
+                      <button onClick={() => navigateTo('privacy')} className="hover:text-brand-gold transition-colors">Zasebnost</button>
+                      <button onClick={() => navigateTo('contact')} className="hover:text-brand-gold transition-colors">Kontakt</button>
                   </div>
               </footer>
 
