@@ -44,16 +44,19 @@ export const SocialProof: React.FC = () => {
   }, []);
 
   return (
-    <div className="py-16 md:py-20 px-4 bg-dark-bg/50 border-y border-white/5">
+    <div className="py-16 md:py-24 px-4 bg-dark-bg/50 border-y border-white/5">
       <div className="max-w-5xl mx-auto text-center">
-        <div ref={sectionRef} className="inline-block">
-            <h2 className="text-4xl md:text-7xl font-serif font-black text-transparent bg-clip-text bg-gradient-to-r from-brand-gold via-yellow-200 to-brand-gold mb-4 tracking-tighter drop-shadow-lg tabular-nums pb-4">
+        
+        {/* Animated Counter Headline */}
+        <div ref={sectionRef} className="relative z-10 mb-4">
+            <h2 className="text-6xl sm:text-7xl md:text-8xl font-serif font-black text-transparent bg-clip-text bg-gradient-to-b from-[#FFD700] via-[#FDB931] to-[#FFD700] tracking-tighter drop-shadow-2xl tabular-nums leading-[1.1] py-2">
                 {count}M Ogledov
             </h2>
         </div>
-        <h3 className="text-lg md:text-2xl text-gray-300 font-medium mb-10 md:mb-12 max-w-2xl mx-auto">
+        
+        <p className="text-lg md:text-2xl text-gray-300 font-medium mb-12 max-w-3xl mx-auto leading-relaxed">
             Od tistih, ki so sprejeli ta izziv v tujini zadnjič in spremenili svoja življenja.
-        </h3>
+        </p>
 
         {/* Dashboard Mockup Container */}
         <div className="relative bg-card-bg border border-gray-800 rounded-2xl p-4 md:p-10 shadow-2xl max-w-4xl mx-auto overflow-hidden mb-12 md:mb-16">

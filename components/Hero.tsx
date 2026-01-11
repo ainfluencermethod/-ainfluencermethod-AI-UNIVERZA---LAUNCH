@@ -1,32 +1,11 @@
-import React, { useState, useEffect } from 'react';
-import { Briefcase, Ghost, Star, Users, Flame } from 'lucide-react';
+import React from 'react';
+import { Briefcase, Ghost, Users } from 'lucide-react';
 import { Button } from './Button';
 import { VideoDemo } from './VideoDemo';
 
 export const Hero: React.FC = () => {
-  const [badgeIndex, setBadgeIndex] = useState(0);
-  const [fade, setFade] = useState(true);
-
-  const badgeMessages = [
-    { text: "Pridruži se 120+ članom", subtext: "ki so že začeli ustvarjati", icon: <Users size={10} className="text-black fill-black" /> },
-    { text: "Še samo 15 mest prostih", subtext: "preden se cena dvigne", icon: <Flame size={10} className="text-black fill-black" /> },
-    { text: "3 novi člani", subtext: "so se pridružili v zadnji uri", icon: <Star size={10} className="text-black fill-black" /> }
-  ];
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setFade(false);
-      setTimeout(() => {
-        setBadgeIndex((prev) => (prev + 1) % badgeMessages.length);
-        setFade(true);
-      }, 500); // 500ms fade out transition
-    }, 4000); // Change every 4 seconds
-
-    return () => clearInterval(interval);
-  }, []);
-
   return (
-    <div className="relative pt-24 pb-16 md:pt-36 md:pb-32 px-4 text-center overflow-hidden bg-black flex flex-col items-center">
+    <div className="relative pt-32 pb-16 md:pt-48 md:pb-32 px-4 text-center overflow-hidden bg-black flex flex-col items-center">
       
       {/* --- Stage Background Effects --- */}
       <div className="absolute inset-0 pointer-events-none">
@@ -43,34 +22,30 @@ export const Hero: React.FC = () => {
 
       <div className="relative w-full z-10 flex flex-col items-center max-w-[90rem]">
         
-        {/* Top Badge: Dynamic Social Proof / Scarcity */}
-        <div className="inline-flex items-center gap-2 bg-white/5 border border-white/10 rounded-full px-4 py-1.5 mb-6 backdrop-blur-md animate-fade-in-up hover:bg-white/10 transition-all cursor-default min-h-[36px] min-w-[260px] justify-center shadow-[0_0_15px_rgba(255,215,0,0.05)]">
-            <div className={`flex items-center gap-2 transition-opacity duration-500 ${fade ? 'opacity-100' : 'opacity-0'}`}>
-                <div className="flex -space-x-1">
-                     <div className="w-4 h-4 rounded-full bg-brand-gold border border-black flex items-center justify-center shadow-sm">
-                         {badgeMessages[badgeIndex].icon}
-                     </div>
+        {/* Top Badge: Static Social Proof */}
+        <div className="inline-flex items-center gap-2 bg-[#111] border border-white/10 rounded-full px-5 py-2 mb-8 backdrop-blur-md animate-fade-in-up hover:bg-white/10 transition-all cursor-default shadow-[0_0_20px_rgba(255,215,0,0.1)]">
+            <div className="flex items-center gap-3">
+                <div className="w-5 h-5 rounded-full bg-brand-gold border border-black flex items-center justify-center shadow-sm">
+                     <Users size={12} className="text-black fill-black" />
                 </div>
-                <div className="flex flex-col items-start leading-none">
-                     <span className="text-brand-gold text-[10px] md:text-xs font-bold uppercase tracking-widest whitespace-nowrap drop-shadow-sm">
-                        {badgeMessages[badgeIndex].text}
-                     </span>
-                </div>
+                <span className="text-brand-gold text-xs md:text-sm font-black uppercase tracking-widest whitespace-nowrap drop-shadow-sm">
+                    Pridruži se 120+ članom
+                </span>
             </div>
         </div>
 
         {/* 1. Headline */}
-        <h1 className="text-2xl sm:text-3xl md:text-5xl lg:text-6xl font-sans font-black text-white leading-tight mb-6 tracking-tight drop-shadow-2xl max-w-5xl mx-auto animate-fade-in-up text-center px-4" style={{ animationDelay: '100ms' }}>
-          30 Dni, da <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#FFD700] via-[#FDB931] to-[#FFD700] italic pr-2">Kopiraš Moj AI&nbsp;Sistem</span> in Začneš <span className="text-white underline decoration-brand-gold/50 underline-offset-8 decoration-2">Ustvarjati Dohodek</span> v 2026
+        <h1 className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-sans font-black text-white leading-snug mb-8 tracking-tight drop-shadow-2xl max-w-5xl mx-auto animate-fade-in-up text-center px-4" style={{ animationDelay: '100ms' }}>
+          30 Dni, da <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#FFD700] via-[#FDB931] to-[#FFD700] italic pr-2 inline-block">Kopiraš Moj AI&nbsp;Sistem</span> in Začneš <span className="text-white underline decoration-brand-gold/50 underline-offset-8 decoration-2">Ustvarjati Dohodek</span> v 2026
         </h1>
 
         {/* 2. Subheadline */}
-        <p className="text-base sm:text-lg md:text-xl text-gray-400 font-medium mb-8 md:mb-10 max-w-3xl mx-auto leading-relaxed drop-shadow-md text-center animate-fade-in-up px-4" style={{ animationDelay: '200ms' }}>
+        <p className="text-base sm:text-lg md:text-xl text-gray-300 font-medium mb-10 md:mb-12 max-w-3xl mx-auto leading-relaxed drop-shadow-md text-center animate-fade-in-up px-4" style={{ animationDelay: '200ms' }}>
           Glej mi čez ramo, ko ti pokažem točen sistem, ki mi je ustvaril <span className="text-white font-bold border-b border-brand-gold/50">10.000€+ v samo 7 dneh</span>. Brez olepšav, samo rezultati.
         </p>
 
         {/* Video Player - Central Focus with Glow */}
-        <div className="w-full max-w-4xl mx-auto mb-10 md:mb-12 animate-fade-in-up px-0 sm:px-4 relative group" style={{ animationDelay: '300ms' }}>
+        <div className="w-full max-w-4xl mx-auto mb-12 md:mb-16 animate-fade-in-up px-0 sm:px-4 relative group" style={{ animationDelay: '300ms' }}>
             {/* Ambient Glow behind video - Strong Pulse */}
             <div className="absolute -inset-1 bg-brand-gold/50 rounded-[2rem] blur-3xl animate-pulse-slow"></div>
             

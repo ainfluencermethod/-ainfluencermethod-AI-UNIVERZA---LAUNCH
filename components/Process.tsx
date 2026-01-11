@@ -21,7 +21,7 @@ export const Process: React.FC = () => {
                   <div className="text-9xl font-black text-white leading-none -mt-8 -mr-8">1</div>
               </div>
               <h3 className="text-2xl font-bold text-white mb-2 relative z-10 flex items-center gap-3">
-                  <span className="bg-brand-gold text-black px-3 py-1 rounded text-sm font-black">FAZA 1</span>
+                  <span className="bg-brand-gold text-black px-3 py-1 rounded text-sm font-black shrink-0 whitespace-nowrap">FAZA 1</span>
                   Kloniranje Uspeha
               </h3>
               <p className="text-gray-400 relative z-10 leading-relaxed">
@@ -34,7 +34,7 @@ export const Process: React.FC = () => {
                   <div className="text-9xl font-black text-white leading-none -mt-8 -mr-8">2</div>
               </div>
               <h3 className="text-2xl font-bold text-white mb-2 relative z-10 flex items-center gap-3">
-                   <span className="bg-brand-gold text-black px-3 py-1 rounded text-sm font-black">FAZA 2</span>
+                   <span className="bg-brand-gold text-black px-3 py-1 rounded text-sm font-black shrink-0 whitespace-nowrap">FAZA 2</span>
                   Viralna Eksplozija
               </h3>
               <p className="text-gray-400 relative z-10 leading-relaxed">
@@ -47,7 +47,7 @@ export const Process: React.FC = () => {
                   <div className="text-9xl font-black text-white leading-none -mt-8 -mr-8">3</div>
               </div>
               <h3 className="text-2xl font-bold text-white mb-2 relative z-10 flex items-center gap-3">
-                   <span className="bg-brand-gold text-black px-3 py-1 rounded text-sm font-black">FAZA 3</span>
+                   <span className="bg-brand-gold text-black px-3 py-1 rounded text-sm font-black shrink-0 whitespace-nowrap">FAZA 3</span>
                   Avtomatiziran Profit
               </h3>
               <p className="text-gray-400 relative z-10 leading-relaxed">
