@@ -61,7 +61,6 @@ export const CheckoutForm: React.FC = () => {
              {/* Trust/Payment Icons */}
              <div className="w-full">
                  <div className="flex justify-center gap-3 opacity-30 grayscale hover:grayscale-0 transition-all duration-300">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/b/b5/PayPal.svg" className="h-5 object-contain" alt="PayPal" />
                     <img src="https://upload.wikimedia.org/wikipedia/commons/2/2a/Mastercard-logo.svg" className="h-5 object-contain" alt="Mastercard" />
                     <img src="https://upload.wikimedia.org/wikipedia/commons/0/04/Visa.svg" className="h-5 object-contain" alt="Visa" />
                     <img src="https://upload.wikimedia.org/wikipedia/commons/f/fa/Apple_logo_black.svg" className="h-5 object-contain" alt="Apple Pay" />

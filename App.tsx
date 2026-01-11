@@ -50,8 +50,10 @@ const App: React.FC = () => {
       setCurrentStep('upsell');
     } else if (step === 'success') {
       setCurrentStep('success');
+    } else {
+      setCurrentStep('landing');
     }
-  }, []);
+  }, [window.location.search]);
 
   const safePushState = (path: string) => {
     try {
@@ -165,10 +167,11 @@ const App: React.FC = () => {
                   <FAQ />
               </ScrollReveal>
 
-              <footer className="text-center py-12 text-gray-600 text-sm bg-black border-t border-gray-900 relative z-10">
+              <footer className="text-center py-12 text-gray-600 text-sm bg-black border-t border-gray-900 relative z-10 px-4">
                   <p className="mb-4">© 2026 AI Univerza.</p>
-                  <div className="flex justify-center gap-4 underline">
-                      <button onClick={() => navigateTo('terms')} className="hover:text-brand-gold transition-colors">Pogoji</button>
+                  <div className="flex flex-wrap justify-center gap-x-6 gap-y-2 underline">
+                      <button onClick={() => navigateTo('terms')} className="hover:text-brand-gold transition-colors">Splošni pogoji</button>
+                      <button onClick={() => navigateTo('rules')} className="hover:text-brand-gold transition-colors">Pravila igre</button>
                       <button onClick={() => navigateTo('privacy')} className="hover:text-brand-gold transition-colors">Zasebnost</button>
                       <button onClick={() => navigateTo('contact')} className="hover:text-brand-gold transition-colors">Kontakt</button>
                   </div>

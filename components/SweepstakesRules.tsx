@@ -1,9 +1,9 @@
 import React from 'react';
-import { ArrowLeft, Scale } from 'lucide-react';
+import { ArrowLeft, Scale, ShieldCheck, Trophy, Gavel } from 'lucide-react';
 
 export const SweepstakesRules: React.FC = () => {
   return (
-    <div className="min-h-screen bg-black text-gray-300 font-sans p-6 md:p-12 relative">
+    <div className="min-h-screen bg-black text-gray-300 font-sans p-6 md:p-12 relative selection:bg-brand-gold selection:text-black">
       <div className="max-w-4xl mx-auto">
         
         {/* Navigation */}
@@ -15,12 +15,16 @@ export const SweepstakesRules: React.FC = () => {
 
         {/* Header */}
         <div className="border-b border-white/10 pb-8 mb-12">
-            <h1 className="text-2xl md:text-4xl font-serif font-black text-white mb-4 leading-tight">
-                Splošni pogoji sodelovanja in določila varovanja osebnih podatkov v nagradni igri »Nagradna igra AI Univerza«
+            <h1 className="text-2xl md:text-4xl font-serif font-black text-white mb-4 leading-tight uppercase tracking-tight">
+                Splošni pogoji sodelovanja in določila varovanja osebnih podatkov v nagradni igri <span className="text-brand-gold italic">»Nagradna igra AI Univerza«</span>
             </h1>
-            <div className="flex items-center gap-2 text-gray-500 text-sm">
-                <Scale size={16} />
-                <span>Uradni dokument</span>
+            <div className="flex flex-wrap gap-4 items-center text-gray-500 text-sm">
+                <div className="flex items-center gap-2">
+                    <Scale size={16} />
+                    <span>Uradni dokument</span>
+                </div>
+                <div className="w-1 h-1 bg-gray-700 rounded-full"></div>
+                <span>Veljavnost: 11. 1. 2026 – 16. 1. 2026</span>
             </div>
         </div>
 
@@ -28,7 +32,9 @@ export const SweepstakesRules: React.FC = () => {
         <div className="space-y-12 leading-relaxed text-sm md:text-base text-gray-300">
             
             <section>
-                <h2 className="text-white font-bold text-2xl mb-6 border-b border-white/10 pb-2">I. Splošni pogoji</h2>
+                <h2 className="text-white font-bold text-2xl mb-6 border-b border-white/10 pb-2 flex items-center gap-3">
+                    <Gavel size={24} className="text-brand-gold" /> I. Splošni pogoji
+                </h2>
                 
                 <div className="space-y-8">
                     <div>
@@ -58,178 +64,104 @@ export const SweepstakesRules: React.FC = () => {
                             V nagradni igri lahko sodelujejo fizične osebe, starejše od 18 let, s stalnim prebivališčem v Republiki Sloveniji, ki izpolnjujejo v teh splošnih pogojih navedene pogoje za sodelovanje. V nagradni igri ni dovoljeno sodelovati osebam, ki so zaposlene pri organizatorju. Udeleženci ne smejo sodelovati v imenu tretjih oseb.
                         </p>
                         <p className="mb-4">
-                            Pogoj za sodelovanje v nagradni igri je, da so udeleženci seznanjeni in se strinjajo z vsemi pogoji in pravili nagradne igre ter soglašajo s posredovanjem in obdelavo osebnih podatkov za namen izvedbe nagradne igre. Šteje se, da s sodelovanjem v nagradni igri na enega izmed načinov, opisanega v teh pravilih, udeleženec pristane na vse pogoje in pravila v zvezi z nagradno igro, ki so objavljeni na <span className="text-brand-gold">www.aiuniverza.si/pravila</span>.
-                        </p>
-                        <p>
-                            Nagrajenci, ki ne izpolnjujejo pogojev opredeljenih v splošnih pogojih sodelovanja v nagradni igri, bodo iz nagradne igre izključeni s strani organizatorja. Organizator si pridržuje pravico do dopolnitev in sprememb teh splošnih pogojev. Vsaka sprememba oz. dopolnitev bo objavljena na www.aiuniverza.si/pravila.
+                            Pogoj za sodelovanje v nagradni igri je, da so udeleženci seznanjeni in se strinjajo z vsemi pogoji in pravili nagradne igre ter soglašajo s posredovanjem in obdelavo osebnih podatkov za namen izvedbe nagradne igre. Šteje se, da s sodelovanjem v nagradni igri udeleženec pristane na vse pogoje in pravila, objavljena na spletni strani.
                         </p>
                     </div>
 
                     <div>
                         <h3 className="text-white font-bold text-lg mb-2">5. Način sodelovanja v nagradni igri</h3>
-                        <p className="mb-4">Sodelovanje v nagradni igri je mogoče na dva načina:</p>
-                        <ul className="list-disc pl-5 space-y-4 mb-4">
-                            <li>
-                                <strong>1. način (z nakupom):</strong> Za sodelovanje v nagradni igri mora udeleženec v času trajanja nagradne igre opraviti <strong>nakup programa AI Univerza</strong>. Vsak opravljen nakup v obdobju trajanja nagradne igre, navedenem v točki 3. teh splošnih pogojev, šteje kot ena prijava za sodelovanje v žrebanju.
-                            </li>
-                            <li>
-                                <strong>2. način (brez nakupa):</strong> Posameznik lahko v nagradni igri sodeluje tudi tako, da pošlje ročno napisano pismo na naslov organizatorja: <strong>3PM d.o.o., Prušnikova ulica 19, Ljubljana, 1210 LJUBLJANA-ŠENTVID</strong>. Pismo mora vsebovati naslednje osebne podatke udeleženca: ime, priimek ter elektronski naslov. S posredovanjem pisma in osebnih podatkov se šteje, da se posameznik strinja s splošnimi pogoji sodelovanja v nagradni igri in jih sprejema. Če organizator ugotovi, da prijava udeleženca ni veljavna, ker ji manjka kateri od zahtevanih podatkov ali če prijava ni skladna s pravili, lahko takšnega udeleženca izključi iz sodelovanja v nagradni igri.
-                            </li>
-                        </ul>
-                        <p className="mb-4">
-                            <strong>Omejitve sodelovanja:</strong> Možno je večkratno sodelovanje v nagradni igri, pri čemer posameznik lahko sodeluje največ <strong>1-krat (enkrat) na dan</strong>, ne glede na izbrani način sodelovanja.
-                        </p>
-                        <p>
-                            Vsi, ki sodelujejo s pomočjo prepovedanih sredstev (npr. avtomatiziranih skript, lažnih profilov itd.), bodo iz sodelovanja izključeni. Skupinsko sodelovanje ter sodelovanje na podlagi avtomatizirane storitve ni dovoljeno.
+                        <p className="mb-4 italic text-gray-400">Sodelovanje je mogoče na dva načina:</p>
+                        <div className="grid gap-6">
+                            <div className="bg-white/5 p-6 rounded-2xl border border-white/10">
+                                <h4 className="text-brand-gold font-bold mb-2">1. način (z nakupom):</h4>
+                                <p className="text-sm">
+                                    Udeleženec v času trajanja nagradne igre opravi <strong>nakup programa AI Univerza</strong>. Vsak opravljen nakup v obdobju trajanja šteje kot ena prijava za sodelovanje v žrebanju.
+                                </p>
+                            </div>
+                            <div className="bg-white/5 p-6 rounded-2xl border border-white/10">
+                                <h4 className="text-brand-gold font-bold mb-2">2. način (brez nakupa):</h4>
+                                <p className="text-sm">
+                                    Posameznik pošlje ročno napisano pismo na naslov organizatorja: <strong>3PM d.o.o., Prušnikova ulica 19, 1210 Ljubljana</strong>. Pismo mora vsebovati: ime, priimek in elektronski naslov. S tem se posameznik strinja s splošnimi pogoji.
+                                </p>
+                            </div>
+                        </div>
+                        <p className="mt-4 text-sm text-gray-500">
+                            <strong>Omejitve:</strong> Posameznik lahko sodeluje največ <strong>1-krat (enkrat) na dan</strong>, ne glede na način sodelovanja.
                         </p>
                     </div>
 
                     <div>
                         <h3 className="text-white font-bold text-lg mb-2">6. Izbor in obveščanje nagrajencev</h3>
                         <p className="mb-4">
-                            Komisija, ki jo sestavlja predstavnik zaposlenih pri organizatorju (v nadaljevanju: komisija), bo med tistimi sodelujočimi, ki bodo v nagradni igri sodelovali v skladu s temi pravili, po zaključku nagradne igre izžrebala <strong>3 (tri) nagrajence</strong> in <strong>3 (tri) nadomestne nagrajence</strong>.
+                            Komisija bo po zaključku nagradne igre izžrebala <strong>3 (tri) nagrajence</strong> in 3 nadomestne nagrajence. Žrebanje bo potekalo dne <strong>1. 2. 2026</strong> na lokaciji Letališka 1, 1000 Ljubljana. Žreb ni javen.
                         </p>
                         <p className="mb-4">
-                            Komisija bo žreb nagrajencev izvedla dne <strong>1. 2. 2026</strong> na lokaciji <strong>Letališka 1, 1000 Ljubljana</strong>. Žreb ne bo javen.
-                        </p>
-                        <p className="mb-4">
-                            Izvedla se bo interna preverba, da nihče od izžrebanih nagrajencev ni zaposlen pri organizatorju. V primeru izžrebanega zaposlenega bo komisija tega izžrebanca izločila in nagrado podelila nadomestnemu izžrebancu po vrstnem redu izžrebanih.
-                        </p>
-                        <p className="mb-4">
-                            Zapisnik o nagrajencih z njihovimi osebnimi podatki bo podpisan s strani komisije in se bo hranil na sedežu organizatorja deset (10) let od njegovega zapisa.
-                        </p>
-                        <p className="mb-4">
-                            <strong>Objava in obveščanje:</strong> Rezultati žrebanja bodo objavljeni 1 dan po žrebu (dne 2. 2. 2026) v <strong>Skool skupnosti AI Univerza</strong> in na <strong>Instagram profilu @nepridiprav</strong>.
-                        </p>
-                        <p className="mb-4">
-                            Nagrajenci bodo s strani organizatorja o izboru obveščeni tudi po sporočeni elektronski pošti. V roku <strong>7 (sedmih) dni</strong> po prejemu obvestila o nagradi mora nagrajenec organizatorju sporočiti vse potrebne podatke za pošiljanje oziroma prevzem nagrade (naslov stalnega prebivališča, davčna številka).
-                        </p>
-                        <p>
-                            Če se nagrajenec v 7 (sedmih) dneh od obvestila o izboru ne bo javil, ne bo javil točnih ali celotnih podatkov ali z njim ne bo mogoče vzpostaviti stika, bo to pomenilo, da se njegovo sodelovanje v igri prekine in se mu nagrada ne podeli. V tem primeru se imenuje novega nagrajenca iz seznama nadomestnih nagrajencev.
+                            Rezultati bodo objavljeni dne <strong>2. 2. 2026</strong> v Skool skupnosti AI Univerza in na Instagramu (@nepridiprav). Nagrajenci bodo obveščeni tudi po e-pošti in morajo v roku <strong>7 dni</strong> posredovati davčno številko in naslov.
                         </p>
                     </div>
 
                     <div>
-                        <h3 className="text-white font-bold text-lg mb-2">7. Podelitev nagrad</h3>
-                        <p>
-                            Organizator bo nagrade nagrajencem poslal po pošti ali omogočil prevzem po dogovoru. Stroške pošiljanja krije organizator. Nagrada ni prenosljiva na tretje osebe. Izplačilo nagrade v denarju ni možno.
+                        <h3 className="text-white font-bold text-lg mb-2">7. Podelitev in 8. Obdavčitev nagrad</h3>
+                        <p className="mb-4">
+                            Nagrade bodo poslane po pošti. Izplačilo v denarju ni možno. 
+                        </p>
+                        <p className="bg-white/5 p-4 rounded-xl border-l-4 border-brand-gold text-sm italic">
+                            Organizator za nagrajence odvede <strong>akontacijo dohodnine</strong> v skladu z ZDoh-2, saj vrednost nagrad presega 42 EUR. Akontacijo plača organizator.
                         </p>
                     </div>
 
                     <div>
-                        <h3 className="text-white font-bold text-lg mb-2">8. Obdavčitev nagrad</h3>
-                        <p className="mb-4">
-                            Prejemnik nagrade je po Zakonu o dohodnini (ZDoh-2) davčni zavezanec, zato mora skladno z ZDoh-2 in Zakonom o davčnem postopku (ZDavP-2) pred prevzemom nagrade organizatorju predložiti osebne podatke (ime, priimek, naslov, davčna številka).
-                        </p>
-                        <p>
-                            Ker vrednost posameznih nagrad presega zakonsko določeno mejo (42 EUR), organizator za nagrajence odvede <strong>akontacijo dohodnine</strong> v skladu z veljavnimi predpisi. Akontacijo dohodnine plača organizator. Morebitna doplačila dohodnine v skladu z letno dohodninsko odločbo gredo v breme nagrajenca.
-                        </p>
-                    </div>
-
-                    <div>
-                        <h3 className="text-white font-bold text-lg mb-2">9. Nagradni sklad</h3>
-                        <p className="mb-4">
-                            Organizator bo v nagradni igri podelil 3 nagrade. Skupna vrednost nagradnega sklada znaša <strong>15.069,94 EUR</strong> (z DDV).
-                        </p>
-                        <p className="mb-4 font-bold">Nagrade:</p>
-                        <ul className="list-disc pl-5 space-y-2 mb-4">
-                            <li>1 x MacBook Pro M5 14 inch (vrednost: 1.939,95 €)</li>
-                            <li>1 x iPhone 17 Pro (vrednost: 1.379,99 €)</li>
-                            <li>1 x Rolex Datejust (vrednost: 11.750,00 €)</li>
-                        </ul>
-                        <p>
-                            Namesto nagrade ni mogoče zahtevati njene denarne protivrednosti. Navedena vrednost posamezne nagrade predstavlja njeno tržno vrednost (z DDV) na dan sprejema teh pravil.
-                        </p>
-                    </div>
-
-                    <div>
-                        <h3 className="text-white font-bold text-lg mb-2">10. Izključitev odgovornosti</h3>
-                        <p className="mb-4">
-                            Sodelujoči sodelujejo v nagradni igri na lastno odgovornost. Organizator ne odgovarja za morebitno škodo, ki bi izvirala iz nagrade. Organizator ne prevzema nobene odgovornosti za kakršnekoli nezaželene posledice, ki bi jih sodelujoči in/ali kdorkoli tretji utrpel kot posledica sodelovanja v nagradni igri ali kot posledica koriščenja nagrade.
-                        </p>
-                        <p className="mb-4">
-                            Organizator prav tako ni odgovoren, če je strežnik ali spletna stran nedosegljiva, razen če bi bilo to mogoče pripisati skrajno malomarnim ali namernim dejanjem na strani organizatorja. Organizator ni odgovoren za točnost in popolnost posredovanih informacij s strani udeležencev.
-                        </p>
-                        <p>
-                            V primeru reklamacij ali uveljavljanja jamčevalnih zahtevkov na izdelku, ki je predmet nagradnega sklada, se nagrajenec obrne na proizvajalca izdelka oz. njegovega zastopnika v Republiki Sloveniji.
-                        </p>
+                        <h3 className="text-white font-bold text-lg mb-2 flex items-center gap-2">
+                            <Trophy size={20} className="text-brand-gold" /> 9. Nagradni sklad
+                        </h3>
+                        <p className="mb-4">Skupna vrednost nagradnega sklada znaša <strong>15.069,94 EUR</strong> (z DDV).</p>
+                        <div className="overflow-x-auto">
+                            <table className="w-full text-left text-sm border-collapse">
+                                <thead>
+                                    <tr className="border-b border-white/20 text-white">
+                                        <th className="py-2">Nagrada</th>
+                                        <th className="py-2 text-right">Vrednost (z DDV)</th>
+                                    </tr>
+                                </thead>
+                                <tbody className="text-gray-400">
+                                    <tr className="border-b border-white/5">
+                                        <td className="py-3">1x Rolex Datejust (Jubilee Bracelet)</td>
+                                        <td className="py-3 text-right">11.750,00 €</td>
+                                    </tr>
+                                    <tr className="border-b border-white/5">
+                                        <td className="py-3">1x MacBook Pro M5 14 inch</td>
+                                        <td className="py-3 text-right">1.939,95 €</td>
+                                    </tr>
+                                    <tr className="border-b border-white/5">
+                                        <td className="py-3">1x iPhone 17 Pro</td>
+                                        <td className="py-3 text-right">1.379,99 €</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
                     </div>
                 </div>
             </section>
 
             <section>
-                <h2 className="text-white font-bold text-2xl mb-6 border-b border-white/10 pb-2">II. Določila o varstvu osebnih podatkov</h2>
-                
-                <div className="space-y-8">
-                    <div>
-                        <h3 className="text-white font-bold text-lg mb-2">1. Podatki o upravljavcu osebnih podatkov</h3>
-                        <p>
-                            Upravljavec osebnih podatkov udeležencev in nagrajencev je organizator <strong>3PM d.o.o.</strong>. Organizator bo pridobljene osebne podatke varoval v skladu z veljavno zakonodajo na področju varstva osebnih podatkov (Splošna uredba GDPR in ZVOP-2) ter v skladu s svojimi notranjimi akti. Organizator pridobljenih osebnih podatkov v nobenem primeru ne bo posredoval ali razkril nepooblaščenim tretjim osebam.
-                        </p>
-                    </div>
-
-                    <div>
-                        <h3 className="text-white font-bold text-lg mb-2">2. Kategorije in izvor podatkov</h3>
-                        <p className="mb-4">Za izvedbo nagradne igre organizator zbira in obdeluje naslednje osebne podatke udeležencev:</p>
-                        <ul className="list-disc pl-5 mb-4">
-                            <li>ime in priimek,</li>
-                            <li>elektronski naslov.</li>
-                        </ul>
-                        <p className="mb-4">Pri nagrajencih, ki prejmejo nagrado v vrednosti nad 42 EUR, organizator dodatno zbira še:</p>
-                        <ul className="list-disc pl-5">
-                            <li>naslov stalnega prebivališča,</li>
-                            <li>davčno številko (za namen odmere akontacije dohodnine).</li>
-                        </ul>
-                    </div>
-
-                    <div>
-                        <h3 className="text-white font-bold text-lg mb-2">3. Namen in pravna podlaga obdelave osebnih podatkov</h3>
-                        <p className="mb-4">
-                            Organizator bo osebne podatke, zbrane v okviru sodelovanja v nagradni igri, uporabil izključno za namen izvedbe nagradne igre (žrebanje nagrajencev, obveščanje in objava nagrajencev, pošiljanje nagrad, izpolnjevanje davčnih obveznosti).
-                        </p>
-                        <p className="mb-4">Pravna podlaga za obdelavo osebnih podatkov v okviru nagradne igre je:</p>
-                        <ul className="list-disc pl-5 mb-4">
-                            <li><strong>Privolitev</strong> (člen 6(1)(a) GDPR) za sodelovanje v igri in obveščanje o izidu.</li>
-                            <li><strong>Zakonska obveznost</strong> (člen 6(1)(c) GDPR) v povezavi z davčno zakonodajo za nagrajence.</li>
-                        </ul>
-                        <p>
-                            Brez posredovanja podatkov sodelovanje v nagradni igri in prevzem nagrade nista možna.
-                        </p>
-                    </div>
-
-                    <div>
-                        <h3 className="text-white font-bold text-lg mb-2">4. Prejemniki podatkov</h3>
-                        <p>
-                            Osebne podatke obdeluje organizator. Tretjim osebam se osebni podatki posredujejo le, kadar je to potrebno za izvedbo nagradne igre (npr. dostavni službi za pošiljanje nagrade ali FURS-u za potrebe davčnega poročanja).
-                        </p>
-                    </div>
-
-                    <div>
-                        <h3 className="text-white font-bold text-lg mb-2">5. Čas shranjevanja</h3>
-                        <ul className="list-disc pl-5">
-                            <li className="mb-2">Osebni podatki neizžrebanih udeležencev se izbrišejo po zaključku nagradne igre in razglasitvi nagrajencev.</li>
-                            <li>Osebni podatki nagrajencev se obdelujejo in hranijo <strong>10 let</strong> od podelitve nagrade oz. kolikor je to potrebno na podlagi davčne zakonodaje. Po preteku roka hrambe organizator osebne podatke izbriše.</li>
-                        </ul>
-                    </div>
-
-                    <div>
-                        <h3 className="text-white font-bold text-lg mb-2">6. Pravice posameznikov</h3>
-                        <p className="mb-4">
-                            Udeleženci imajo pravico do dostopa do svojih osebnih podatkov, popravka, izbrisa (do trenutka žreba oz. če to ni v nasprotju z zakonodajo), omejitve obdelave in prenosljivosti podatkov. Če obdelava temelji na privolitvi, jo lahko udeleženec kadar koli prekliče, kar pa ne vpliva na zakonitost obdelave pred preklicem.
-                        </p>
-                        <p className="mb-4">
-                            Svoja vprašanja ali zahteve v zvezi z varstvom osebnih podatkov lahko naslovite na elektronski naslov: <a href="mailto:pici@aiuniverza.si" className="text-brand-gold hover:underline">pici@aiuniverza.si</a>.
-                        </p>
-                        <p>
-                            Posameznik ima pravico do pritožbe pri nadzornem organu: Informacijski pooblaščenec Republike Slovenije (gp.ip@ip-rs.si).
-                        </p>
-                    </div>
+                <h2 className="text-white font-bold text-2xl mb-6 border-b border-white/10 pb-2 flex items-center gap-3">
+                    <ShieldCheck size={24} className="text-brand-gold" /> II. Varstvo osebnih podatkov
+                </h2>
+                <div className="space-y-6">
+                    <p>
+                        Upravljavec osebnih podatkov je organizator <strong>3PM d.o.o.</strong>. Podatki se zbirajo za namen izvedbe nagradne igre, obveščanja o rezultatih in izpolnjevanja davčnih obveznosti.
+                    </p>
+                    <ul className="list-disc pl-5 space-y-2">
+                        <li><strong>Čas hrambe:</strong> Podatki neizžrebanih se zbrišejo po žrebu, podatki nagrajencev se hranijo 10 let skladno z zakonodajo.</li>
+                        <li><strong>Pravice:</strong> Pravica do dostopa, popravka, izbrisa, omejitve obdelave in prenosljivosti.</li>
+                        <li><strong>Kontakt:</strong> <a href="mailto:pici@aiuniverza.si" className="text-brand-gold underline">pici@aiuniverza.si</a>.</li>
+                    </ul>
                 </div>
             </section>
 
             <div className="pt-12 border-t border-white/10 mt-12 text-center text-gray-500 text-xs">
                  <p className="mb-2">Ljubljana, 10. 1. 2026</p>
-                 <p className="font-bold">3PM d.o.o.</p>
+                 <p className="font-bold uppercase tracking-widest">3PM d.o.o.</p>
             </div>
 
         </div>
