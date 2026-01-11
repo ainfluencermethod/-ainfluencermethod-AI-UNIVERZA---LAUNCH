@@ -59,12 +59,12 @@ export const Process: React.FC = () => {
       </div>
 
       <div className="max-w-6xl mx-auto relative z-10">
-        <div className="text-center mb-24">
+        <div className="text-center mb-20">
           <div className="inline-flex items-center gap-2 bg-brand-gold/10 border border-brand-gold/20 rounded-full px-4 py-1.5 mb-6 backdrop-blur-md">
             <Sparkles className="w-4 h-4 text-brand-gold" />
             <span className="text-brand-gold text-[10px] font-black uppercase tracking-widest">Preprost 3-stopenjski sistem</span>
           </div>
-          <h2 className="text-5xl md:text-8xl font-black text-white mb-8 tracking-tighter leading-none">
+          <h2 className="text-4xl md:text-6xl font-black text-white mb-8 tracking-tighter leading-none">
             En Sistem. <br/>
             <span className="text-brand-gold italic">Dve Poti do zaslužka.</span>
           </h2>

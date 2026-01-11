@@ -25,7 +25,7 @@ export const UpsellModal: React.FC<UpsellModalProps> = ({ onAccept, onDecline })
   };
 
   const handleUpgrade = () => {
-    window.location.href = "https://buy.stripe.com/7sYaEY9VI2Sw1Qpg3693y02";
+    window.location.href = "https://buy.stripe.com/3cI9AUgk68cQ0Ml5os93y06";
   };
 
   return (
