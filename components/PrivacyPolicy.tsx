@@ -29,7 +29,7 @@ export const PrivacyPolicy: React.FC = () => {
                     Upravljavec osebnih podatkov je podjetje <strong>3PM d.o.o.</strong>, Prušnikova ulica 19, Ljubljana, 1210 LJUBLJANA-ŠENTVID. Matična številka: 9861459000.
                 </p>
                 <p className="mt-2">
-                    Kontaktni naslov za vprašanja s področja zasebnosti: <a href="mailto:pici@aiuniversa.si" className="text-brand-gold">pici@aiuniversa.si</a>.
+                    Kontaktni naslov za vprašanja s področja zasebnosti: <a href="mailto:pici@aiuniverza.si" className="text-brand-gold">pici@aiuniverza.si</a>.
                 </p>
             </section>
 
@@ -57,7 +57,7 @@ export const PrivacyPolicy: React.FC = () => {
 
             <section>
                 <h2 className="text-white font-bold text-2xl mb-4">4. Pravne podlage</h2>
-                <p>Podatke obdelujeme na podlagi:</p>
+                <p>Podatke obdelujemo na podlagi:</p>
                 <ul className="list-disc pl-6 mt-2 space-y-2">
                     <li><strong>Izvajanja pogodbe:</strong> Ko opravite nakup tečaja.</li>
                     <li><strong>Zakonske obveznosti:</strong> Arhiviranje računov.</li>
@@ -78,7 +78,7 @@ export const PrivacyPolicy: React.FC = () => {
                     <li>Ugovora obdelavi.</li>
                 </ul>
                 <p className="mt-4 italic text-sm">
-                    Za uveljavljanje katerihkoli od teh pravic nam pišite na pici@aiuniversa.si. Odgovorili vam bomo v najkrajšem možnem času, najkasneje pa v 30 dneh.
+                    Za uveljavljanje katerihkoli od teh pravic nam pišite na pici@aiuniverza.si. Odgovorili vam bomo v najkrajšem možnem času, najkasneje pa v 30 dneh.
                 </p>
             </section>
 

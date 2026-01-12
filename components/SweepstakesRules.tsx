@@ -73,10 +73,10 @@ export const SweepstakesRules: React.FC = () => {
                                 V nagradni igri lahko sodelujejo fizične osebe, starejše od 18 let, s stalnim prebivališčem v Republiki Sloveniji, ki izpolnjujejo v teh splošnih pogojih navedene pogoje za sodelovanje. V nagradni igri ni dovoljeno sodelovati osebam, ki so zaposlene pri organizatorju. Udeleženci ne smejo sodelovati v imenu tretjih oseb.
                             </p>
                             <p>
-                                Pogoj za sodelovanje v nagradni igri je, da so udeleženci seznanjeni in se strinjajo z vsemi pogoji in pravili nagradne igre ter soglašajo s posredovanjem in obdelavo osebnih podatkov za namen izvedbe nagradne igre. Šteje se, da s sodelovanjem v nagradni igri na enega izmed načinov, opisanega v teh pravilih, udeleženec pristane na vse pogoje in pravila v zvezi z nagradno igro, ki so objavljeni na <strong>www.aiuniversa.si/pravila</strong>.
+                                Pogoj za sodelovanje v nagradni igri je, da so udeleženci seznanjeni in se strinjajo z vsemi pogoji in pravili nagradne igre ter soglašajo s posredovanjem in obdelavo osebnih podatkov za namen izvedbe nagradne igre. Šteje se, da s sodelovanjem v nagradni igri na enega izmed načinov, opisanega v teh pravilih, udeleženec pristane na vse pogoje in pravila v zvezi z nagradno igro, ki so objavljeni na <strong>www.aiuniverza.si/pravila</strong>.
                             </p>
                             <p>
-                                Nagrajenci, ki ne izpolnjujejo pogojev opredeljenih v splošnih pogojih sodelovanja v nagradni igri, bodo iz nagradne igre izključeni s strani organizatorja. Organizator si pridržuje pravico do dopolnitev in sprememb teh splošnih pogojev. Vsaka sprememba oz. dopolnitev bo objavljena na <strong>www.aiuniversa.si/pravila</strong>.
+                                Nagrajenci, ki ne izpolnjujejo pogojev opredeljenih v splošnih pogojih sodelovanja v nagradni igri, bodo iz nagradne igre izključeni s strani organizatorja. Organizator si pridržuje pravico do dopolnitev in sprememb teh splošnih pogojev. Vsaka sprememba oz. dopolnitev bo objavljena na <strong>www.aiuniverza.si/pravila</strong>.
                             </p>
                         </div>
                     </div>
@@ -116,7 +116,7 @@ export const SweepstakesRules: React.FC = () => {
                                 Izvedla se bo interna preverba, da nihče od izžrebanih nagrajencev ni zaposlen pri organizatorju. V primeru izžrebanega zaposlenega bo komisija tega izžrebanca izločila in nagrado podelila nadomestnemu izžrebancu po vrstnem redu izžrebanih.
                             </p>
                             <p>
-                                Zapisnik o nagrajencih z njihovimi osebnimi podatki bo podpisan s strani komisije in se bo hranil na sedežu organizatorja deset (10) let od njegovega zapisa.
+                                Zapisnik o nagrajencih z njihovimi osebnih podatki bo podpisan s strani komisije e se bo hranil na sedežu organizatorja deset (10) let od njegovega zapisa.
                             </p>
                             <p className="bg-white/5 p-4 rounded-xl border border-white/10">
                                 <strong>Objava in obveščanje:</strong> Rezultati žrebanja bodo objavljeni 1 dan po žrebu (dne 2. 2. 2026) v <strong>Skool skupnosti AI Universa</strong> in na <strong>Instagram profilu @nepridiprav</strong>. Nagrajenci bodo s strani organizatorja o izboru obveščeni tudi po sporočeni elektronski pošti. V roku <strong>7 (sedmih) dni</strong> po prejemu obvestila o nagradi mora nagrajenec organizatorju sporočiti vse potrebne podatke za pošiljanje oziroma prevzem nagrade (naslov stalnega prebivališča, davčna številka).
@@ -224,7 +224,7 @@ export const SweepstakesRules: React.FC = () => {
                             <p>Pri nagrajencih, ki prejmejo nagrado v vrednosti nad 42 EUR, organizator dodatno zbira še:</p>
                             <ul className="list-disc pl-5 space-y-1 text-gray-400">
                                 <li>naslov stalnega prebivališča,</li>
-                                <li>davčno številko (za namen odmere akontacije dohodnine).</li>
+                                <li>davčno številka (za namen odmere akontacije dohodnine).</li>
                             </ul>
                         </div>
                     </div>
@@ -252,7 +252,7 @@ export const SweepstakesRules: React.FC = () => {
                     </div>
 
                     <div>
-                        <h3 className="text-white font-bold text-lg mb-3">5. Čas shranjevanja</h3>
+                        <h3 className="text-white font-bold text-lg mb-3">5. Čas hrambe</h3>
                         <ul className="list-disc pl-5 space-y-3">
                             <li>Osebni podatki neizžrebanih udeležencev se izbrišejo po zaključku nagradne igre in razglasitvi nagrajencev.</li>
                             <li>Osebni podatki nagrajencev se obdelujejo in hranijo <strong>10 let</strong> od podelitve nagrade oz. kolikor je to potrebno na podlagi davčne zakonodaje. Po preteku roka hrambe organizator osebne podatke izbriše.</li>
@@ -266,7 +266,7 @@ export const SweepstakesRules: React.FC = () => {
                         </p>
                         <p className="flex items-center gap-2 mb-6">
                             Svoja vprašanja ali zahteve v zvezi z varstvom osebnih podatkov lahko naslovite na elektronski naslov: 
-                            <a href="mailto:info@aiuniversa.si" className="text-brand-gold font-bold underline">info@aiuniversa.si</a>.
+                            <a href="mailto:pici@aiuniverza.si" className="text-brand-gold font-bold underline">pici@aiuniverza.si</a>.
                         </p>
                         <p className="text-xs text-gray-500">
                             Posameznik ima pravico do pritožbe pri nadzornem organu: Informacijski pooblaščenec Republike Slovenije (gp.ip@ip-rs.si).

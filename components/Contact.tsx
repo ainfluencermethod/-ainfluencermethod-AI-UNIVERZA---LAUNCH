@@ -26,8 +26,8 @@ export const Contact: React.FC = () => {
                     </div>
                     <div>
                         <p className="text-gray-500 text-xs font-bold uppercase tracking-widest mb-1">Email</p>
-                        <a href="mailto:pici@aiuniversa.si" className="text-white font-bold text-lg hover:text-brand-gold transition-colors">
-                            pici@aiuniversa.si
+                        <a href="mailto:pici@aiuniverza.si" className="text-white font-bold text-lg hover:text-brand-gold transition-colors">
+                            pici@aiuniverza.si
                         </a>
                         <p className="text-gray-500 text-sm mt-1 italic">Odgovorimo v roku 24-48 ur.</p>
                     </div>

@@ -47,7 +47,7 @@ export const TermsAndConditions: React.FC = () => {
             <section>
                 <h2 className="text-white font-bold text-2xl mb-4">4. Garancija na zadovoljstvo</h2>
                 <p>
-                    Uporabnikom nudimo 14-dnevno garancijo na zadovoljstvo. V kolikor uporabnik ugotovi, da program ne ustreza njegovim pričakovanjem, lahko v roku 14 dni od nakupa zahteva povračilo kupnine na naslov pici@aiuniversa.si. Pogoj za vračilo je, da uporabnik ni pregledal več kot 20 % vsebine programa.
+                    Uporabnikom nudimo 14-dnevno garancijo na zadovoljstvo. V kolikor uporabnik ugotovi, da program ne ustreza njegovim pričakovanjem, lahko v roku 14 dni od nakupa zahteva povračilo kupnine na naslov pici@aiuniverza.si. Pogoj za vračilo je, da uporabnik ni pregledal več kot 20 % vsebine programa.
                 </p>
             </section>
 
