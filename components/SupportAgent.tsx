@@ -53,17 +53,21 @@ export const SupportAgent: React.FC = () => {
     setIsLoading(true);
 
     try {
-      // Use process.env.API_KEY directly as required by guidelines.
-      // Assume this variable is valid and accessible in the execution context.
-      const ai = new GoogleGenAI({ apiKey: process.env.API_KEY });
+      // Defensive check for the global process object
+      const key = typeof process !== 'undefined' && process.env ? process.env.API_KEY : '';
+      
+      if (!key) {
+        throw new Error("API ključ ni nastavljen.");
+      }
+
+      const ai = new GoogleGenAI({ apiKey: key });
       
       // Gemini history must start with a 'user' message. 
-      // We skip the first hardcoded 'model' greeting when sending to the API.
       const apiContents = newMessages
         .filter((_, idx) => idx > 0)
         .map(msg => ({
           role: msg.role,
-          parts: [{ text: msg.text }]
+          parts: [{ text: String(msg.text) }]
         }));
 
       const response = await ai.models.generateContent({
@@ -77,13 +81,15 @@ export const SupportAgent: React.FC = () => {
 
       const modelText = response.text;
       if (modelText) {
-        setMessages(prev => [...prev, { role: 'model', text: modelText }]);
+        setMessages(prev => [...prev, { role: 'model', text: String(modelText) }]);
       }
     } catch (error: any) {
       console.error("Chat Error:", error);
+      // Ensure the error message is a string to prevent [object Object]
+      const errorString = error instanceof Error ? error.message : String(error);
       setMessages(prev => [...prev, { 
         role: 'model', 
-        text: "Oprosti, trenutno imam težave s povezavo. Preveri, če je tvoj API ključ aktiven, ali nam piši na pici@aiuniverza.si." 
+        text: `Oprosti, prišlo je do napake: ${errorString}. Piši nam na pici@aiuniverza.si.`
       }]);
     } finally {
       setIsLoading(false);

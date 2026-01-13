@@ -35,14 +35,17 @@ export const Hero: React.FC = () => {
             </div>
         </div>
 
-        {/* 1. Headline - Refined for high impact */}
-        <h1 className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-sans font-black text-white leading-[0.95] mb-6 tracking-tighter drop-shadow-2xl max-w-6xl mx-auto animate-fade-in-up text-center px-4" style={{ animationDelay: '100ms' }}>
-          30 Dni, da <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#BF953F] via-[#FCF6BA] to-[#B38728] italic pr-2 inline-block">Kopiraš Moj AI Sistem</span> in Začneš <span className="text-white underline decoration-brand-gold/50 underline-offset-8 decoration-4 text-nowrap">Ustvarjati Dohodek</span> v 2026
+        {/* 1. Headline - Refined for high impact without unrealistic promises */}
+        <h1 className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-sans font-black text-white leading-tight md:leading-[1.1] mb-6 tracking-tighter drop-shadow-2xl max-w-6xl mx-auto animate-fade-in-up text-center px-4" style={{ animationDelay: '100ms' }}>
+          Nauči se Graditi <br className="hidden md:block" />
+          <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#BF953F] via-[#FCF6BA] to-[#B38728] italic pr-4 inline-block pb-1">AI Digitalne Blagovne Znamke</span> 
+          <br className="hidden md:block" /> 
+          in Ustvari Svojo <span className="text-white underline decoration-brand-gold/50 underline-offset-8 decoration-4">Pot do Uspeha</span> v 2026
         </h1>
 
         {/* 2. Subheadline */}
         <p className="text-lg sm:text-xl md:text-2xl text-gray-300 font-medium mb-10 md:mb-14 max-w-3xl mx-auto leading-relaxed drop-shadow-md text-center animate-fade-in-up px-4" style={{ animationDelay: '200ms' }}>
-          Pridruži se v AI Universo, ko ti pokažemo <span className="text-white font-bold">točen sistem</span>, ki nam je ustvaril <span className="text-white font-bold border-b-2 border-brand-gold/50">10.000€+ v samo 7 dneh</span>. Brez olepšav, samo rezultati.
+          Pridruži se v AI Universo, kjer spoznaš <span className="text-white font-bold">preizkušene strategije</span> za gradnjo digitalne prisotnosti in <span className="text-white font-bold border-b-2 border-brand-gold/50">učinkovito uporabo AI orodij</span>. Razvij veščine, ki bodo dominirale v prihodnosti.
         </p>
 
         {/* Video Player - Central Focus with Glow */}
@@ -84,7 +87,7 @@ export const Hero: React.FC = () => {
                  </div>
 
                  {/* Feature Badges */}
-                 <div className="flex flex-col sm:flex-row gap-3 md:gap-4 w-full max-w-lg mx-auto">
+                 <div className="flex flex-col sm:flex-row gap-3 md:gap-4 w-full max-lg mx-auto">
                     {/* Card 1: Faceless */}
                     <div className="flex-1 bg-[#0a0a0a]/60 backdrop-blur-xl border border-white/5 rounded-xl p-3 md:p-4 flex items-center gap-3 text-left group hover:border-brand-gold/30 transition-all duration-300">
                         <div className="w-10 h-10 md:w-11 md:h-11 rounded-lg bg-white/5 flex items-center justify-center shrink-0 border border-white/5 group-hover:bg-brand-gold/10 transition-colors">
@@ -92,7 +95,7 @@ export const Hero: React.FC = () => {
                         </div>
                         <div>
                             <h4 className="text-white font-black text-xs md:text-sm uppercase tracking-wider mb-0.5">BREZ KAZANJA OBRAZA</h4>
-                            <p className="text-gray-500 text-[9px] md:text-[10px] font-bold leading-tight uppercase tracking-tight">100% anonimnost zagotovljena</p>
+                            <p className="text-gray-500 text-[9px] md:text-[10px] font-bold leading-tight uppercase tracking-tight">Gradi v anonimnosti</p>
                         </div>
                     </div>
 
@@ -102,8 +105,8 @@ export const Hero: React.FC = () => {
                             <Briefcase className="text-gray-400 group-hover:text-brand-gold transition-colors" size={20} />
                         </div>
                         <div>
-                            <h4 className="text-white font-black text-xs md:text-sm uppercase tracking-wider mb-0.5">BREZ IZKUŠENJ</h4>
-                            <p className="text-gray-500 text-[9px] md:text-[10px] font-bold leading-tight uppercase tracking-tight">Primerno za začetnike</p>
+                            <h4 className="text-white font-black text-xs md:text-sm uppercase tracking-wider mb-0.5">ZAČNI IZ NIČLE</h4>
+                            <p className="text-gray-500 text-[9px] md:text-[10px] font-bold leading-tight uppercase tracking-tight">Strukturirano učenje za začetnike</p>
                         </div>
                     </div>
                  </div>

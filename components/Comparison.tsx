@@ -10,10 +10,10 @@ export const Comparison: React.FC = () => {
         {/* Compact Header */}
         <div className="text-center mb-10">
             <h2 className="text-3xl md:text-5xl font-serif font-black text-white mb-3">
-                Matematika je <span className="text-[#FFD700] italic">Jasna</span>
+                Pot do <span className="text-[#FFD700] italic">Znanja</span>
             </h2>
             <p className="text-gray-400 text-sm md:text-base font-sans max-w-xl mx-auto">
-                V življenju imaš vedno 3 izbire. Poglejmo si ceno vsake izmed njih.
+                V digitalni dobi je tvoje znanje tvoja največja valuta.
             </p>
         </div>
 
@@ -33,14 +33,14 @@ export const Comparison: React.FC = () => {
                 <div className="space-y-4 text-sm flex-1">
                     <div className="pt-4 border-t border-white/5">
                         <p className="text-[10px] text-gray-600 font-bold uppercase mb-1">Rezultat</p>
-                        <p className="text-gray-500">Ista služba, isti šef, ista plača.</p>
+                        <p className="text-gray-500">Ista služba, isti šef, brez novih veščin.</p>
                     </div>
                     <div>
                         <p className="text-[10px] text-gray-600 font-bold uppercase mb-1">Tveganje</p>
-                        <p className="text-red-900/80 font-bold">Inflacija ti požre prihranke.</p>
+                        <p className="text-red-900/80 font-bold">Zaostajanje za digitalnim razvojem.</p>
                     </div>
                      <div>
-                        <p className="text-[10px] text-gray-600 font-bold uppercase mb-1">Čas do uspeha</p>
+                        <p className="text-[10px] text-gray-600 font-bold uppercase mb-1">Čas do napredka</p>
                         <p className="text-gray-600 font-mono">Nikoli</p>
                     </div>
                 </div>
@@ -59,14 +59,14 @@ export const Comparison: React.FC = () => {
                 <div className="space-y-4 text-sm flex-1 relative z-10">
                     <div className="pt-4 border-t border-white/5">
                         <p className="text-[10px] text-gray-500 font-bold uppercase mb-1">Rezultat</p>
-                        <p className="text-gray-400">Visok stres, birokracija, 80% propad.</p>
+                        <p className="text-gray-400">Visok stres, birokracija, kompleksnost.</p>
                     </div>
                     <div>
                         <p className="text-[10px] text-gray-500 font-bold uppercase mb-1">Tveganje</p>
-                        <p className="text-orange-500/80 font-bold">Visoko. Lahko izgubiš vse.</p>
+                        <p className="text-orange-500/80 font-bold">Visoko. Potrebna velika začetna sredstva.</p>
                     </div>
                      <div>
-                        <p className="text-[10px] text-gray-500 font-bold uppercase mb-1">Čas do uspeha</p>
+                        <p className="text-[10px] text-gray-500 font-bold uppercase mb-1">Čas do povrnitve</p>
                         <p className="text-gray-400 font-mono">3 - 5 let</p>
                     </div>
                 </div>
@@ -90,17 +90,17 @@ export const Comparison: React.FC = () => {
                 <div className="space-y-4 text-sm bg-white/5 rounded-xl p-4">
                     <div>
                         <p className="text-[10px] text-gray-400 font-bold uppercase mb-1">Rezultat</p>
-                        <p className="text-white font-bold">Nov vir prihodka & svoboda.</p>
+                        <p className="text-white font-bold">Pridobitev veščin prihodnosti.</p>
                     </div>
                     <div>
                         <p className="text-[10px] text-gray-400 font-bold uppercase mb-1">Tveganje</p>
                         <p className="text-[#4ADE80] font-bold flex items-center gap-1">
-                            <Check size={14} strokeWidth={4} /> Ničelno (Garancija).
+                            <Check size={14} strokeWidth={4} /> Ničelno (Zadovoljstvo).
                         </p>
                     </div>
                     <div>
-                        <p className="text-[10px] text-gray-400 font-bold uppercase mb-1">Čas do uspeha</p>
-                        <p className="text-[#FFD700] font-mono font-bold">30 - 60 dni</p>
+                        <p className="text-[10px] text-gray-400 font-bold uppercase mb-1">Čas do osvojitve</p>
+                        <p className="text-[#FFD700] font-mono font-bold">Individualno (30-60 dni)</p>
                     </div>
                 </div>
             </div>

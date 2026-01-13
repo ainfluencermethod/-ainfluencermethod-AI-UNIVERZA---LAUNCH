@@ -9,7 +9,7 @@ export const Process: React.FC = () => {
       tag: "KORAK 1",
       title: "Opremljanje",
       icon: Rocket,
-      description: "Prejmeš dostop do orodij, ki nadomeščajo celotne produkcijske ekipe. Naučiš se generirati vsebino, ki izgleda profesionalno, brez drage opreme.",
+      description: "Prejmeš dostop do orodij in znanja, ki nadomeščajo celotne produkcijske ekipe. Naučiš se generirati vsebino, ki izgleda profesionalno.",
       details: null
     },
     {
@@ -17,7 +17,7 @@ export const Process: React.FC = () => {
       tag: "KORAK 2",
       title: "Izbira Poti",
       icon: Target,
-      description: "Sistem deluje v obeh smereh. Izbereš tisto, ki ti najbolj ustreza, ali pa preprosto delaš obe hkrati.",
+      description: "Sistem te vodi skozi različne digitalne modele. Izbereš tistega, ki ti najbolj ustreza.",
       details: (
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 mt-4">
           <div className="bg-white/5 border border-white/10 rounded-xl p-3 group/path hover:border-brand-gold/50 transition-colors">
@@ -27,16 +27,16 @@ export const Process: React.FC = () => {
               </div>
               <span className="text-[10px] font-black text-white uppercase tracking-wider">Pot A: Influencer</span>
             </div>
-            <p className="text-[10px] text-gray-500 leading-tight">Gradiš svoj brand brez obraza.</p>
+            <p className="text-[10px] text-gray-500 leading-tight">Gradiš brand brez uporabe obraza.</p>
           </div>
           <div className="bg-white/5 border border-white/10 rounded-xl p-3 group/path hover:border-brand-gold/50 transition-colors">
             <div className="flex items-center gap-2 mb-1">
               <div className="w-6 h-6 rounded-lg bg-brand-gold/10 flex items-center justify-center">
                 <Building2 size={12} className="text-brand-gold" />
               </div>
-              <span className="text-[10px] font-black text-white uppercase tracking-wider">Pot B: Agencija</span>
+              <span className="text-[10px] font-black text-white uppercase tracking-wider">Pot B: Brand Strateg</span>
             </div>
-            <p className="text-[10px] text-gray-500 leading-tight">Delaš vsebine za podjetja.</p>
+            <p className="text-[10px] text-gray-500 leading-tight">Delaš vsebine za blagovne znamke.</p>
           </div>
         </div>
       )
@@ -44,9 +44,9 @@ export const Process: React.FC = () => {
     {
       id: 3,
       tag: "KORAK 3",
-      title: "Zaslužek",
+      title: "Monetizacija",
       icon: DollarSign,
-      description: "Pretvoriš poglede v denar. Od digitalnih produktov do mesečnih plačil od podjetij za tvoje storitve.",
+      description: "Implementiraš strategije za pretvorbo pozornosti v poslovni uspeh. Od digitalnih produktov do sodelovanj.",
       details: null
     }
   ];
@@ -63,14 +63,14 @@ export const Process: React.FC = () => {
         <div className="text-center mb-12">
           <div className="inline-flex items-center gap-2 bg-brand-gold/10 border border-brand-gold/20 rounded-full px-4 py-1.5 mb-4 backdrop-blur-md">
             <Sparkles className="w-3.5 h-3.5 text-brand-gold" />
-            <span className="text-brand-gold text-[9px] font-black uppercase tracking-[0.2em]">Preprost 3-stopenjski sistem</span>
+            <span className="text-brand-gold text-[9px] font-black uppercase tracking-[0.2em]">Strukturiran sistem učenja</span>
           </div>
           <h2 className="text-3xl md:text-5xl font-black text-white mb-4 tracking-tighter leading-[1.1]">
             En Sistem. <br/>
-            <span className="text-brand-gold italic">Dve Poti do zaslužka.</span>
+            <span className="text-brand-gold italic">Več Poti do Uspeha.</span>
           </h2>
           <p className="text-gray-400 text-base md:text-lg max-w-xl mx-auto leading-relaxed">
-            Ničesar ne prepuščamo naključju. Sistem te vodi od točke nič do prvega evra preko dokazanih metod.
+            Sistem te vodi od osnov do naprednih metod preko preizkušenih izobraževalnih modulov.
           </p>
         </div>
 

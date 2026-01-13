@@ -4,28 +4,28 @@ import { Plus, Minus } from 'lucide-react';
 
 const faqs = [
   {
-    question: "Ali je ta tečaj primeren za popolne začetnike?",
-    answer: "Absolutno. AI Universa je zasnovana tako, da te pelje od nule do prvega zaslužka. Ne potrebuješ predhodnega znanja o marketingu, AI orodjih ali poslu. Vse tehnične stvari so razložene 'klik-za-klikom'."
+    question: "Ali je ta program primeren za popolne začetnike?",
+    answer: "Da. AI Universa je zasnovana tako, da te pelje od osnov do razumevanja kompleksnih sistemov. Ne potrebuješ predhodnega znanja o marketingu ali AI orodjih. Vse strategije so razložene korak za korakom."
   },
   {
     question: "Koliko časa moram vložiti dnevno?",
-    answer: "Večina naših najuspešnejših študentov porabi med 2 do 3 ure na dan. Ker uporabljamo AI za generiranje vsebine, je proces bistveno hitrejši kot pri tradicionalnem ustvarjanju vsebin."
+    answer: "Za učinkovit napredek priporočamo med 1 do 2 uri na dan. Uporaba AI orodij sicer pohitri proces, vendar učenje novih veščin zahteva določeno mero časa in fokusa."
   },
   {
     question: "Ali potrebujem močan računalnik?",
-    answer: "Ne. Vsa AI orodja, ki jih uporabljamo, delujejo v oblaku (v brskalniku). Potrebuješ le prenosnik ali celo samo telefon in internetno povezavo."
+    answer: "Ne. Večina AI orodij, ki jih uporabljamo, deluje v oblaku. Potrebuješ le prenosnik ali tablico s stabilno internetno povezavo."
   },
   {
-    question: "Kdaj se tečaj začne?",
-    answer: "Takoj po nakupu dobiš dostop do platforme. Gre za 'self-paced' program z dodatkom mentorstva v živo, tako da lahko začneš takoj in napreduješ v svojem tempu."
+    question: "Kdaj dobim dostop do vsebin?",
+    answer: "Takoj po potrditvi naročila prejmeš dostop do izobraževalne platforme. Program je strukturiran tako, da lahko napreduješ v svojem tempu."
   },
   {
-    question: "Kaj če ne bom zadovoljen/a?",
-    answer: "Ponujamo 14-dnevno garancijo na zadovoljstvo. Če ugotoviš, da to ni zate, nam piši in povrnili ti bomo celotno kupnino brez vprašanj."
+    question: "Kaj če z vsebino ne bom zadovoljen/a?",
+    answer: "Nudimo 14-dnevno garancijo na zadovoljstvo. Če v prvih 14 dneh ugotoviš, da vsebina ni tisto, kar si iskal/a, nam piši in povrnili ti bomo kupnino (ob upoštevanju pogojev uporabe)."
   },
   {
-    question: "Ali so vključeni dodatni stroški za orodja?",
-    answer: "Ker pri nas prakticiramo kvaliteto, uporabljamo plačljiva orodja. Dodatni stroški so med 30-100eur/mesec. To je vsa investicija, ki jo rabiš za eksponentno rast"
+    question: "Ali so potrebni dodatni stroški za orodja?",
+    answer: "Nekatera napredna AI orodja zahtevajo lastno naročnino. V programu pokažemo tako brezplačne alternative kot plačljive možnosti, da se lahko odločiš glede na svoje potrebe."
   }
 ];
 

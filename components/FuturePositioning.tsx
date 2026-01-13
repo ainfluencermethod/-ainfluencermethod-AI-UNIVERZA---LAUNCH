@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { BrainCircuit, Globe, TrendingUp } from 'lucide-react';
 
@@ -12,15 +13,15 @@ export const FuturePositioning: React.FC = () => {
           <div className="inline-flex items-center gap-2 bg-red-500/10 border border-red-500/20 rounded-full px-4 py-1.5 mb-6 backdrop-blur-sm animate-pulse">
              <span className="text-red-500 text-xs font-black uppercase tracking-widest flex items-center gap-2">
                 <div className="w-1.5 h-1.5 rounded-full bg-red-500 animate-ping"></div>
-                URGENTNO OPOZORILO
+                POMEMBNO OPOZORILO
              </span>
           </div>
           <h2 className="text-3xl md:text-5xl font-serif font-black text-white mb-6 leading-tight">
             AI Ne Bo Nadomestil Ljudi. <br/>
-            <span className="text-brand-gold italic">Ljudje Z AI Bodo Nadomestili Tebe.</span>
+            <span className="text-brand-gold italic">Ljudje Z AI Veščinami Bodo Dominirali.</span>
           </h2>
           <p className="text-gray-400 text-lg max-w-3xl mx-auto leading-relaxed">
-            Smo na točki preloma. Hitrost razvoja je zastrašujoča. Kdor danes ignorira to tehnologijo, tvega, da postane <strong className="text-white">digitalno nepismen</strong> v manj kot 2 letih. To je tvoja priložnost, da si zagotoviš nepošteno prednost, preden se vrata za začetnike zaprejo.
+            Smo na točki preloma. Hitrost razvoja tehnologije zahteva nenehno prilagajanje. Kdor danes osvoji to tehnologijo, si gradi <strong className="text-white">digitalno prihodnost</strong>. To je tvoja priložnost, da si pridobiš znanje, preden postane standard.
           </p>
         </div>
 
@@ -29,9 +30,9 @@ export const FuturePositioning: React.FC = () => {
                 <div className="w-12 h-12 bg-white/5 rounded-lg flex items-center justify-center mb-6 group-hover:bg-brand-gold transition-colors">
                     <BrainCircuit className="text-gray-300 group-hover:text-black w-6 h-6" />
                 </div>
-                <h3 className="text-xl font-bold text-white mb-3">Arhitekt vs. Potrošnik</h3>
+                <h3 className="text-xl font-bold text-white mb-3">Ustvarjalec vs. Potrošnik</h3>
                 <p className="text-gray-400 text-sm leading-relaxed">
-                    99% populacije bo le pasivno konzumiralo AI vsebine. Ti boš v tistem 1%, ki to vsebino ustvarja in <strong className="text-white">mastno služi</strong>. Razlika v življenjskem standardu med tema dvema skupinama bo brutalna.
+                    Večina ljudi bo le pasivno uporabljala AI vsebine. Ti boš tisti, ki te vsebine razume in jih zna <strong className="text-white">strateško uporabiti</strong> za ustvarjanje dodane vrednosti.
                 </p>
             </div>
 
@@ -40,9 +41,9 @@ export const FuturePositioning: React.FC = () => {
                 <div className="w-12 h-12 bg-white/5 rounded-lg flex items-center justify-center mb-6 group-hover:bg-brand-gold transition-colors">
                     <TrendingUp className="text-gray-300 group-hover:text-black w-6 h-6" />
                 </div>
-                <h3 className="text-xl font-bold text-white mb-3">Tekma s Časom</h3>
+                <h3 className="text-xl font-bold text-white mb-3">Tekma z Digitalnim Razvojem</h3>
                 <p className="text-gray-400 text-sm leading-relaxed">
-                    Tradicionalne veščine postajajo ničvredne. Zakaj bi nekdo plačal tebi za 10 ur dela, če AI to naredi v 3 sekundah? Nauči se upravljati stroje danes, ali pa tekmuj z njimi jutri (namig: <strong className="text-white">izgubil boš</strong>).
+                    Tradicionalne metode se spreminjajo. Zakaj bi delali na star način, če AI omogoča večjo učinkovitost? Osvoji orodja danes, da boš konkurenčen jutri. <strong className="text-white">Znanje je tvoja varnost.</strong>
                 </p>
             </div>
 
@@ -50,9 +51,9 @@ export const FuturePositioning: React.FC = () => {
                 <div className="w-12 h-12 bg-white/5 rounded-lg flex items-center justify-center mb-6 group-hover:bg-brand-gold transition-colors">
                     <Globe className="text-gray-300 group-hover:text-black w-6 h-6" />
                 </div>
-                <h3 className="text-xl font-bold text-white mb-3">Svet Brez Meja</h3>
+                <h3 className="text-xl font-bold text-white mb-3">Globalni Doseg</h3>
                 <p className="text-gray-400 text-sm leading-relaxed">
-                    Slovenija je majhna. Splet je neskončen. Z našimi AI sistemi jezikovne bariere ne obstajajo več. Jutri lahko služiš v dolarjih na ameriškem trgu, medtem ko piješ kavo v Ljubljani. <strong className="text-white">Svet je tvoje igrišče.</strong>
+                    Splet ne pozna meja. Z AI sistemi jezikovne bariere postajajo nepomembne. Implementiraj svoje ideje na globalnih trgih, medtem ko si gradiš digitalno premoženje od doma. <strong className="text-white">Možnosti so neskončne.</strong>
                 </p>
             </div>
         </div>

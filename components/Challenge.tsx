@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { Rocket, Zap, DollarSign, Trophy, CheckCircle2, Lock, Sparkles, Calendar, TrendingUp } from 'lucide-react';
 
@@ -5,55 +6,55 @@ export const Challenge: React.FC = () => {
   const weeks = [
     {
       id: 1,
-      title: "11.-16. Januar: Začni takoj!",
-      subtitle: "PREDNOST PRED OSTALIMI",
+      title: "11.-16. Januar: Fundamenti",
+      subtitle: "RAZVOJ KONCEPTA",
       Icon: Rocket,
       iconClass: "text-white",
       tasks: [
-        "Ustvariš AI Influencerja",
-        "Pripraviš Prve Reelse",
-        "Ogrevaš profil"
+        "Razvoj AI identitete",
+        "Priprava vsebinskih strategij",
+        "Nastavitev kanalov"
       ],
       active: true,
       highlight: false
     },
     {
       id: 2,
-      title: "16. Januar - 15. Februar: 30 dnevni challenge",
-      subtitle: "PRIGARAJ SI NOV MACBOOK PRO",
+      title: "16. Januar - 15. Februar: Akcija",
+      subtitle: "KONSISTENCA IN RAST",
       Icon: Zap,
       iconClass: "text-white",
       tasks: [
-        "3x Objave na dan",
-        "Viralne objave",
-        "Cilj: bodi najboljši in nagrajen"
+        "Dnevna produkcija vsebin",
+        "Testiranje viralnih kljuk",
+        "Optimizacija dosega"
       ],
       active: false,
       highlight: false
     },
     {
       id: 3,
-      title: "15. Februar - 15. April: Profit",
-      subtitle: "MONETIZACIJA",
+      title: "15. Februar - 15. April: Implementacija",
+      subtitle: "POSLOVNI MODELI",
       Icon: DollarSign,
       iconClass: "text-white",
       tasks: [
-        "Launch digitalnega produkta",
-        "Postavitev funnel-a (prodajni lijak)",
-        "Zaslužek"
+        "Vzpostavitev prodajnih poti",
+        "Implementacija monetizacije",
+        "Prve poslovne meritve"
       ],
       active: false,
       highlight: true
     },
     {
       id: 4,
-      title: "15.april - 2027: Rast",
-      subtitle: "DOMINACIJA LETA",
+      title: "15. april - 2027: Skaliranje",
+      subtitle: "DOLGOROČNA VIZIJA",
       Icon: Trophy,
       iconClass: "text-brand-gold",
       tasks: [
-        "Avtomatizacija procesov",
-        "Grajenje ekipe"
+        "Sistematizacija procesov",
+        "Dolgoročna rast blagovne znamke"
       ],
       active: false,
       highlight: false
@@ -72,15 +73,15 @@ export const Challenge: React.FC = () => {
             <div className="text-center mb-16">
                 <div className="inline-flex items-center gap-2 bg-gradient-to-r from-yellow-900/40 to-black border border-yellow-700/30 rounded-full px-4 py-1.5 mb-6 animate-fade-in-up backdrop-blur-md">
                     <Sparkles className="w-4 h-4 text-brand-gold animate-pulse" />
-                    <span className="text-brand-gold text-xs font-black uppercase tracking-widest">New Year, Rich Me</span>
+                    <span className="text-brand-gold text-xs font-black uppercase tracking-widest">Digitalni Načrt za 2026</span>
                 </div>
                 
                 <h2 className="text-4xl md:text-6xl font-serif font-black text-white mb-6 leading-tight">
-                    Tvoj <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-gold via-yellow-200 to-brand-gold italic pr-2">Načrt za 2026</span>
+                    Tvoja <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-gold via-yellow-200 to-brand-gold italic pr-2">Strategija za 2026</span>
                 </h2>
                 <p className="text-gray-400 max-w-2xl mx-auto text-lg">
-                    Naj bo to leto, končno tvoje leto. Tukaj je matematično dokazan sistem, kako boš 
-                    <strong className="text-white"> januarja 2026</strong> spremenil svojo finančno prihodnost.
+                    Nauči se sistematičnega pristopa k digitalnemu uspehu. Tukaj je strukturiran načrt za razvoj tvojih veščin v 
+                    <strong className="text-white"> januarju 2026</strong>.
                 </p>
             </div>
 
@@ -102,12 +103,6 @@ export const Challenge: React.FC = () => {
                             <div className="transform transition-transform duration-300">
                                 <Icon className={`w-6 h-6 md:w-8 md:h-8 ${week.iconClass}`} />
                             </div>
-                            
-                            {week.highlight && (
-                                <div className="absolute -top-2 -right-2 bg-green-600 text-white text-[10px] font-bold px-2 py-1 rounded-full border border-dark-bg shadow-sm z-20">
-                                    $$$
-                                </div>
-                            )}
                         </div>
 
                         {/* Card */}
@@ -149,7 +144,7 @@ export const Challenge: React.FC = () => {
                             TREND ALERT: <span className="text-brand-gold">Zakaj 2026?</span>
                         </h4>
                         <p className="text-gray-400 text-sm leading-relaxed">
-                            Leta 2024 je bil AI novost. Leta 2025 so ga testirali. <strong className="text-white">V 2026 bo AI video postal standard.</strong> Kdor začne ta januar, bo imel prednost "prvega na trgu". To je tvoja priložnost, da ujameš val, preden ga ujamejo vsi ostali.
+                            Leta 2024 je bil AI novost. Leta 2025 so ga testirali. <strong className="text-white">V 2026 bo AI video postal standard.</strong> Kdor danes osvoji te veščine, bo imel ključno prednost na trgu.
                         </p>
                     </div>
                  </div>

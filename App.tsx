@@ -27,10 +27,6 @@ import { CountdownTimer } from './components/CountdownTimer';
 import { Button } from './components/Button';
 import { CheckoutForm } from './components/CheckoutForm';
 import { CookieConsent } from './components/CookieConsent';
-import { SupportAgent } from './components/SupportAgent';
-import { HowItWorks } from './components/HowItWorks';
-import { Comparison } from './components/Comparison';
-import { FuturePositioning } from './components/FuturePositioning';
 
 type AppStep = 'landing' | 'upsell' | 'success' | 'rules' | 'privacy' | 'terms' | 'contact';
 
@@ -42,7 +38,7 @@ const App: React.FC = () => {
     const handleUrlChange = () => {
       const path = window.location.pathname;
       const query = new URLSearchParams(window.location.search);
-      const step = query.get('step');
+      const step = query.get('step') as AppStep;
 
       if (path === '/pravila' || step === 'rules') {
         setCurrentStep('rules');
@@ -84,7 +80,6 @@ const App: React.FC = () => {
   return (
     <>
       <CookieConsent />
-      <SupportAgent />
       
       {currentStep === 'rules' && <SweepstakesRules />}
       {currentStep === 'privacy' && <PrivacyPolicy />}
@@ -116,11 +111,11 @@ const App: React.FC = () => {
               <ScrollReveal delay={0} duration={1000} yOffset={40} threshold={0.2}>
                   <div className="py-12 text-center max-w-4xl mx-auto px-6">
                       <p className="text-xl md:text-2xl text-gray-300 leading-relaxed font-light font-serif italic">
-                          To so ljudje, <span className="text-white font-bold">brez predznanja o uporabi AI orodij</span>, ki so sledili sistemu in ustvarili več kot
-                          <span className="text-white font-bold border-b border-brand-gold not-italic font-sans"> 10.000€ v manj kot 30 dneh.</span>
+                          To so strategije, ki jih uporabljajo <span className="text-white font-bold">digitalni ustvarjalci</span> za gradnjo vplivnih AI blagovnih znamk in
+                          <span className="text-white font-bold border-b border-brand-gold not-italic font-sans"> doseganje izjemnih rezultatov na socialnih omrežjih.</span>
                       </p>
                       <p className="text-gray-500 mt-6 text-sm font-bold uppercase tracking-wide font-sans">
-                          Sistem je prilagojen začetnikom. Ali si pripravljen?
+                          Izobraževalni program prilagojen ambicioznim začetnikom.
                       </p>
                   </div>
               </ScrollReveal>
@@ -138,10 +133,6 @@ const App: React.FC = () => {
               </ScrollReveal>
 
               <ScrollReveal>
-                  <HowItWorks />
-              </ScrollReveal>
-
-              <ScrollReveal>
                   <Objections />
               </ScrollReveal>
               
@@ -150,19 +141,11 @@ const App: React.FC = () => {
               </ScrollReveal>
 
               <ScrollReveal>
-                  <Comparison />
-              </ScrollReveal>
-
-              <ScrollReveal>
                   <Paths />
               </ScrollReveal>
               
               <ScrollReveal>
                   <Challenge />
-              </ScrollReveal>
-
-              <ScrollReveal>
-                  <FuturePositioning />
               </ScrollReveal>
 
               <ScrollReveal>
@@ -189,10 +172,10 @@ const App: React.FC = () => {
                   <div className="max-w-4xl mx-auto mb-10 leading-relaxed opacity-60">
                       <p className="font-bold text-gray-500 uppercase tracking-widest mb-3">Izjava o omejitvi odgovornosti in rezultatih</p>
                       <p className="mb-4">
-                          Rezultati, prikazani na tej spletni strani, so primeri izjemnih dosežkov in eksponentne rasti naših najuspešnejših študentov. Ti rezultati <strong className="text-gray-400">niso tipični</strong> in ne zagotavljajo, da boste dosegli enake ali podobne finančne izide. Uspeh v programu AI Universa je v celoti odvisen od vašega individualnega truda, predanosti, časa, ki ga namenite učenju, ter natančnega izvajanja naučenih strategij.
+                          Rezultati, prikazani na tej spletni strani, so primeri izjemnih dosežkov in rasti naših najuspešnejših študentov. Ti rezultati <strong className="text-gray-400">niso tipični</strong> in ne zagotavljajo, da boste dosegli enake ali podobne finančne izide. Uspeh v programu AI Universa je v celoti odvisen od vašega individualnega truda, predanosti, časa, ki ga namenite učenju, ter natančnega izvajanja naučenih strategij.
                       </p>
                       <p>
-                          Vsak posameznik vstopa v program z različnim predznanjem in delovno etiko, zato so <strong className="text-gray-400">vsi rezultati v vaših rokah</strong>. Spletna prodaja in uporaba AI orodij za ustvarjanje prihodka zahtevata vztrajnost in delo; brez vašega aktivnega prispevka rezultatov ne bo. Pridružitev programu ne pomeni avtomatskega zaslužka.
+                          Vsak posameznik vstopa v program z različnim predznanjem in delovno etiko, zato so <strong className="text-gray-400">vsi rezultati odvisni od vašega dela</strong>. Pridružitev programu ne pomeni avtomatskega zaslužka; gre za izobraževalni program za pridobivanje veščin digitalnega marketinga in uporabe AI.
                       </p>
                   </div>
 

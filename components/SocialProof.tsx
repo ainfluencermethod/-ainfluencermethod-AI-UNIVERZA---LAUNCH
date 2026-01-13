@@ -58,7 +58,7 @@ export const SocialProof: React.FC = () => {
         </div>
         
         <p className="text-lg md:text-2xl text-gray-300 font-medium mb-12 max-w-3xl mx-auto leading-relaxed">
-            Naši študentje v tujini dosegajo rezultate, ki jim spreminjajo življenja.
+            Strategije, ki omogočajo rast digitalnih blagovnih znamk na globalnem trgu.
         </p>
 
         {/* Dashboard Mockup Container */}
@@ -69,9 +69,9 @@ export const SocialProof: React.FC = () => {
             <div className="flex flex-col md:flex-row items-center justify-between gap-6 md:gap-8">
                 <div className="text-left space-y-4 flex-1 w-full">
                     <div className="bg-gray-900/50 p-4 rounded-xl border border-gray-800">
-                        <div className="text-gray-500 text-xs uppercase mb-1">Top Študent</div>
-                        <div className="text-white font-bold text-lg">kia.tyllerxo</div>
-                        <div className="text-transparent bg-clip-text bg-gradient-to-r from-[#BF953F] to-[#FCF6BA] font-mono text-xl font-black">+15.000€ Profit</div>
+                        <div className="text-gray-500 text-xs uppercase mb-1">Primer Študenta</div>
+                        <div className="text-white font-bold text-lg">Digitalni Ustvarjalec</div>
+                        <div className="text-transparent bg-clip-text bg-gradient-to-r from-[#BF953F] to-[#FCF6BA] font-mono text-xl font-black">Dokazana Monetizacija</div>
                     </div>
                 </div>
                 
@@ -81,14 +81,13 @@ export const SocialProof: React.FC = () => {
             </div>
             
             <p className="mt-8 text-gray-400 text-sm max-w-2xl mx-auto">
-                To so navadni ljudje, ki so se pridružili in ustvarili digitalno premoženje v manj kot 30 dneh.
-                Zdaj je ta sistem še izboljšan, poenostavljen in optimiziran.
+                Prikazani so primeri posameznikov, ki so implementirali naše sisteme. Rezultati so individualni in odvisni od vloženega truda.
             </p>
         </div>
 
         {/* Platforms Strip */}
         <div className="border-t border-white/5 pt-12">
-            <p className="text-gray-500 text-xs font-bold uppercase tracking-widest mb-6">Dominiraj na vseh platformah</p>
+            <p className="text-gray-500 text-xs font-bold uppercase tracking-widest mb-6">Utrdi svojo prisotnost na vseh platformah</p>
             <div className="flex flex-wrap justify-center items-center gap-6 md:gap-16 opacity-50 grayscale hover:grayscale-0 transition-all duration-500">
                 <div className="flex items-center gap-2 text-white font-bold text-lg md:text-xl">
                     <Instagram className="text-[#E1306C]" /> Instagram
