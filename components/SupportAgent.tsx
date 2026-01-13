@@ -48,28 +48,34 @@ export const SupportAgent: React.FC = () => {
     if (!userMessage || isLoading) return;
 
     // 1. Update UI with user message
-    setInput('');
     const newMessages: Message[] = [...messages, { role: 'user', text: userMessage }];
     setMessages(newMessages);
+    setInput('');
     setIsLoading(true);
 
     try {
-      // 2. Initialize AI
+      // 2. Initialize AI instance per request for reliability
       const apiKey = process.env.API_KEY;
       if (!apiKey) {
-        throw new Error("API Key is missing from the environment.");
+        throw new Error("API_KEY_MISSING");
       }
 
       const ai = new GoogleGenAI({ apiKey });
       
-      // 3. Prepare contents with history (Gemini format)
-      // We map our messages to the API's expected format: { role: 'user'|'model', parts: [{ text: '...' }] }
-      const contents = newMessages.map(msg => ({
-        role: msg.role,
-        parts: [{ text: msg.text }]
-      }));
+      // 3. Prepare contents. 
+      // CRITICAL: Gemini history MUST start with a 'user' message. 
+      // We skip the first hardcoded 'model' greeting for the API call.
+      const history = newMessages
+        .filter((_, idx) => idx > 0) // Skip initial greeting
+        .map(msg => ({
+          role: msg.role,
+          parts: [{ text: msg.text }]
+        }));
 
-      // 4. Generate Response using the core generateContent method
+      // If for some reason history is empty (shouldn't happen here), provide current message
+      const contents = history.length > 0 ? history : [{ role: 'user', parts: [{ text: userMessage }] }];
+
+      // 4. Generate Response
       const response = await ai.models.generateContent({
         model: 'gemini-3-flash-preview',
         contents: contents,
@@ -81,20 +87,21 @@ export const SupportAgent: React.FC = () => {
         },
       });
 
-      // 5. Extract and Validate Text Output
       const modelText = response.text;
       
       if (!modelText) {
-        throw new Error("AI returned an empty or invalid response.");
+        throw new Error("EMPTY_RESPONSE");
       }
 
       setMessages(prev => [...prev, { role: 'model', text: modelText }]);
     } catch (error: any) {
-      console.error("AI Support Error Details:", error);
+      console.error("Chatbot Error:", error);
       
-      const errorMessage = error?.message?.includes("API_KEY") 
-        ? "Tehnična napaka: API ključ ni nastavljen." 
-        : "Oprosti, trenutno imam težave s povezavo. Piši nam na pici@aiuniverza.si.";
+      let errorMessage = "Oprosti, trenutno imam težave s povezavo. Piši nam na pici@aiuniverza.si.";
+      
+      if (error?.message === "API_KEY_MISSING") {
+        errorMessage = "Tehnična napaka: API ključ ni zaznan. Prosim, osveži stran.";
+      }
       
       setMessages(prev => [...prev, { role: 'model', text: errorMessage }]);
     } finally {
