@@ -1,3 +1,4 @@
+
 import React, { useState, useEffect, useRef } from 'react';
 import { RevenueChart } from './RevenueChart';
 import { Instagram, Youtube, Video, Smartphone } from 'lucide-react';
@@ -47,11 +48,13 @@ export const SocialProof: React.FC = () => {
     <div className="py-16 md:py-24 px-4 bg-dark-bg/50 border-y border-white/5">
       <div className="max-w-5xl mx-auto text-center">
         
-        {/* Animated Counter Headline */}
+        {/* Animated Counter Headline - Upgraded to Premium Gold */}
         <div ref={sectionRef} className="relative z-10 mb-4">
-            <h2 className="text-6xl sm:text-7xl md:text-8xl font-serif font-black text-transparent bg-clip-text bg-gradient-to-b from-[#FFD700] via-[#FDB931] to-[#FFD700] tracking-tighter drop-shadow-2xl tabular-nums leading-[1.1] py-2">
+            <h2 className="text-6xl sm:text-7xl md:text-8xl font-serif font-black text-transparent bg-clip-text bg-gradient-to-b from-[#BF953F] via-[#FCF6BA] via-[#B38728] via-[#FBF5B7] to-[#AA771C] tracking-tighter drop-shadow-[0_10px_30px_rgba(184,134,11,0.3)] tabular-nums leading-[1.1] py-2 filter brightness-110">
                 {count}M Ogledov
             </h2>
+            {/* Subtle underglow */}
+            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-12 bg-brand-gold/5 blur-[60px] -z-10"></div>
         </div>
         
         <p className="text-lg md:text-2xl text-gray-300 font-medium mb-12 max-w-3xl mx-auto leading-relaxed">
@@ -68,7 +71,7 @@ export const SocialProof: React.FC = () => {
                     <div className="bg-gray-900/50 p-4 rounded-xl border border-gray-800">
                         <div className="text-gray-500 text-xs uppercase mb-1">Top Študent</div>
                         <div className="text-white font-bold text-lg">kia.tyllerxo</div>
-                        <div className="text-brand-gold font-mono text-xl">+15.000€ Profit</div>
+                        <div className="text-transparent bg-clip-text bg-gradient-to-r from-[#BF953F] to-[#FCF6BA] font-mono text-xl font-black">+15.000€ Profit</div>
                     </div>
                 </div>
                 

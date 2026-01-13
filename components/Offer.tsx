@@ -1,7 +1,8 @@
 
 import React from 'react';
-import { Zap, ShieldCheck, Lock, Star, Quote, LayoutDashboard, MonitorPlay, Users, BookOpen } from 'lucide-react';
+import { Zap, ShieldCheck, Lock, Star, Quote, LayoutDashboard, MonitorPlay, Users, BookOpen, Clock } from 'lucide-react';
 import { CheckoutForm } from './CheckoutForm';
+import { CountdownTimer } from './CountdownTimer';
 
 export const Offer: React.FC = () => {
   return (
@@ -12,8 +13,17 @@ export const Offer: React.FC = () => {
 
        <div className="max-w-7xl mx-auto relative z-10">
           
-          {/* Header */}
-          <div className="text-center mb-12">
+          {/* Header & Urgent Timer */}
+          <div className="text-center mb-12 flex flex-col items-center">
+              <div className="mb-8 transform hover:scale-105 transition-transform duration-500">
+                  <div className="bg-black text-white px-6 py-2 rounded-t-2xl font-black text-[10px] tracking-[0.3em] uppercase inline-block border-x border-t border-black/10">
+                      PONUDBA POTEČE ČEZ:
+                  </div>
+                  <div className="bg-white/90 backdrop-blur-md border-2 border-black rounded-2xl p-4 md:p-6 shadow-[0_20px_40px_-10px_rgba(0,0,0,0.3)]">
+                      <CountdownTimer variant="pill" />
+                  </div>
+              </div>
+
               <h2 className="font-serif text-4xl md:text-6xl text-black font-black italic mb-4">
                   Pridružite se AI Universi
               </h2>
@@ -28,7 +38,7 @@ export const Offer: React.FC = () => {
                   <div>
                     <h2 className="text-2xl md:text-3xl font-black text-black mb-8 flex items-center gap-3 uppercase tracking-tighter">
                         <Zap className="fill-black w-6 h-6" />
-                        Tvoja bližnjica do uspeha:
+                        TVOJA BLIŽNJICA DO USPEHA:
                     </h2>
 
                     <div className="space-y-4 mb-8">

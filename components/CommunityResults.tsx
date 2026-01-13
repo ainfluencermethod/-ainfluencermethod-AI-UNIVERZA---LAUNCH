@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { TrendingUp } from 'lucide-react';
 
@@ -13,7 +14,7 @@ export const CommunityResults: React.FC = () => {
         <div className="absolute top-1/2 left-0 w-64 h-64 bg-brand-gold/5 blur-[100px] rounded-full pointer-events-none -translate-y-1/2"></div>
         <div className="absolute bottom-0 right-0 w-64 h-64 bg-white/5 blur-[100px] rounded-full pointer-events-none"></div>
 
-        <div className="max-w-6xl mx-auto relative z-10">
+        <div className="max-w-4xl mx-auto relative z-10">
             <div className="text-center mb-16">
                 <div className="inline-flex items-center gap-2 bg-white/5 border border-white/10 rounded-full px-4 py-1.5 mb-6 backdrop-blur-sm">
                     <TrendingUp className="w-4 h-4 text-green-400" />
@@ -27,7 +28,7 @@ export const CommunityResults: React.FC = () => {
                 </p>
             </div>
 
-            <div className="grid md:grid-cols-2 gap-8 md:gap-12">
+            <div className="grid md:grid-cols-2 gap-8 md:gap-12 max-w-3xl mx-auto">
                 {communityImages.map((src, idx) => (
                     <div key={idx} className="group relative">
                         {/* Glow Effect */}

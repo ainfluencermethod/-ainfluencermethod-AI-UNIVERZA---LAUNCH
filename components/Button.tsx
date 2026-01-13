@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { ArrowRight } from 'lucide-react';
 
@@ -30,14 +31,14 @@ export const Button: React.FC<ButtonProps> = ({
     ${fullWidth ? 'w-full' : ''}
   `;
 
-  // Liquid Gold Style
+  // Premium Gold Metallic Style
   const primaryClasses = `
-    bg-gradient-to-r from-[#FFD700] via-[#FDB931] to-[#FFD700]
+    bg-gradient-to-r from-[#BF953F] via-[#FCF6BA] to-[#B38728]
     bg-[length:200%_auto]
     text-black
     border border-white/20
-    shadow-[0_0_20px_rgba(255,215,0,0.3)]
-    hover:shadow-[0_0_35px_rgba(255,215,0,0.6)]
+    shadow-[0_0_20px_rgba(212,175,55,0.3)]
+    hover:shadow-[0_0_35px_rgba(212,175,55,0.6)]
     hover:bg-[100%_0]
     bg-pos-0 hover:bg-pos-100 transition-[background-position] duration-500
   `;
@@ -46,7 +47,6 @@ export const Button: React.FC<ButtonProps> = ({
     bg-white text-black hover:bg-gray-100 shadow-lg hover:shadow-xl border border-transparent hover:border-brand-gold/50
   `;
 
-  // High conversion Green (Success)
   const greenClasses = `
     bg-gradient-to-r from-green-500 via-green-400 to-green-500
     bg-[length:200%_auto]
