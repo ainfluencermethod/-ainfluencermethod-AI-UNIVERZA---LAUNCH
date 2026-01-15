@@ -1,33 +1,45 @@
-import React, { useState, useEffect } from 'react';
-import { X } from 'lucide-react';
+import React, { useState, useEffect, Suspense, lazy } from 'react';
+import { X, Loader2 } from 'lucide-react';
+
+// Critical Components (Loaded immediately)
 import { Hero } from './components/Hero';
-import { SocialProof } from './components/SocialProof';
-import { Reviews } from './components/Reviews';
-import { ResultsShowcase } from './components/ResultsShowcase';
-import { CommunityResults } from './components/CommunityResults';
-import { Objections } from './components/Objections';
-import { Process } from './components/Process';
-import { Sweepstakes } from './components/Sweepstakes';
-import { SweepstakesRules } from './components/SweepstakesRules';
-import { PrivacyPolicy } from './components/PrivacyPolicy';
-import { TermsAndConditions } from './components/TermsAndConditions';
-import { Contact } from './components/Contact';
-import { Founders } from './components/Founders';
-import { Paths } from './components/Paths';
-import { Challenge } from './components/Challenge';
-import { FAQ } from './components/FAQ';
-import { Guarantee } from './components/Guarantee';
-import { ScrollReveal } from './components/ScrollReveal';
-import { ParallaxBackground } from './components/ParallaxBackground';
-import { Offer } from './components/Offer';
-import { UpsellModal } from './components/UpsellModal';
-import { ThankYou } from './components/ThankYou';
 import { CountdownTimer } from './components/CountdownTimer';
 import { Button } from './components/Button';
-import { CheckoutForm } from './components/CheckoutForm';
-import { CookieConsent } from './components/CookieConsent';
+import { ParallaxBackground } from './components/ParallaxBackground';
+import { ScrollReveal } from './components/ScrollReveal';
+
+// Non-Critical Components (Lazy Loaded)
+const SocialProof = lazy(() => import('./components/SocialProof').then(m => ({ default: m.SocialProof })));
+const Reviews = lazy(() => import('./components/Reviews').then(m => ({ default: m.Reviews })));
+const ResultsShowcase = lazy(() => import('./components/ResultsShowcase').then(m => ({ default: m.ResultsShowcase })));
+const CommunityResults = lazy(() => import('./components/CommunityResults').then(m => ({ default: m.CommunityResults })));
+const Objections = lazy(() => import('./components/Objections').then(m => ({ default: m.Objections })));
+const Process = lazy(() => import('./components/Process').then(m => ({ default: m.Process })));
+const Paths = lazy(() => import('./components/Paths').then(m => ({ default: m.Paths })));
+const Challenge = lazy(() => import('./components/Challenge').then(m => ({ default: m.Challenge })));
+const Founders = lazy(() => import('./components/Founders').then(m => ({ default: m.Founders })));
+const Sweepstakes = lazy(() => import('./components/Sweepstakes').then(m => ({ default: m.Sweepstakes })));
+const Offer = lazy(() => import('./components/Offer').then(m => ({ default: m.Offer })));
+const Guarantee = lazy(() => import('./components/Guarantee').then(m => ({ default: m.Guarantee })));
+const FAQ = lazy(() => import('./components/FAQ').then(m => ({ default: m.FAQ })));
+const CookieConsent = lazy(() => import('./components/CookieConsent').then(m => ({ default: m.CookieConsent })));
+
+// Special Views
+const SweepstakesRules = lazy(() => import('./components/SweepstakesRules').then(m => ({ default: m.SweepstakesRules })));
+const PrivacyPolicy = lazy(() => import('./components/PrivacyPolicy').then(m => ({ default: m.PrivacyPolicy })));
+const TermsAndConditions = lazy(() => import('./components/TermsAndConditions').then(m => ({ default: m.TermsAndConditions })));
+const Contact = lazy(() => import('./components/Contact').then(m => ({ default: m.Contact })));
+const ThankYou = lazy(() => import('./components/ThankYou').then(m => ({ default: m.ThankYou })));
+const UpsellModal = lazy(() => import('./components/UpsellModal').then(m => ({ default: m.UpsellModal })));
+const CheckoutForm = lazy(() => import('./components/CheckoutForm').then(m => ({ default: m.CheckoutForm })));
 
 type AppStep = 'landing' | 'upsell' | 'success' | 'rules' | 'privacy' | 'terms' | 'contact';
+
+const SectionLoader = () => (
+  <div className="py-20 flex items-center justify-center">
+    <Loader2 className="animate-spin text-brand-gold opacity-20" size={32} />
+  </div>
+);
 
 const App: React.FC = () => {
   const [currentStep, setCurrentStep] = useState<AppStep>('landing');
@@ -35,27 +47,11 @@ const App: React.FC = () => {
 
   useEffect(() => {
     const handleUrlChange = () => {
-      const path = window.location.pathname;
       const query = new URLSearchParams(window.location.search);
       const step = query.get('step') as AppStep;
-
-      if (path === '/pravila' || step === 'rules') {
-        setCurrentStep('rules');
-      } else if (path === '/zasebnost' || step === 'privacy') {
-        setCurrentStep('privacy');
-      } else if (path === '/pogoji' || step === 'terms') {
-        setCurrentStep('terms');
-      } else if (path === '/kontakt' || step === 'contact') {
-        setCurrentStep('contact');
-      } else if (step === 'upsell') {
-        setCurrentStep('upsell');
-      } else if (step === 'success') {
-        setCurrentStep('success');
-      } else {
-        setCurrentStep('landing');
-      }
+      if (step) setCurrentStep(step);
+      else setCurrentStep('landing');
     };
-
     handleUrlChange();
     window.addEventListener('popstate', handleUrlChange);
     return () => window.removeEventListener('popstate', handleUrlChange);
@@ -68,16 +64,8 @@ const App: React.FC = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
-  const handleUpsellAccept = () => {
-    console.log("Upsell accepted");
-  };
-
-  const handleUpsellDecline = () => {
-    navigateTo('success');
-  };
-
   return (
-    <>
+    <Suspense fallback={<div className="bg-black min-h-screen" />}>
       <CookieConsent />
       
       {currentStep === 'rules' && <SweepstakesRules />}
@@ -85,13 +73,7 @@ const App: React.FC = () => {
       {currentStep === 'terms' && <TermsAndConditions />}
       {currentStep === 'contact' && <Contact />}
       {currentStep === 'success' && <ThankYou />}
-
-      {currentStep === 'upsell' && (
-        <UpsellModal 
-          onAccept={handleUpsellAccept} 
-          onDecline={handleUpsellDecline} 
-        />
-      )}
+      {currentStep === 'upsell' && <UpsellModal onAccept={() => {}} onDecline={() => navigateTo('success')} />}
 
       {currentStep === 'landing' && (
         <div className="min-h-screen bg-dark-bg text-white font-sans selection:bg-brand-gold selection:text-black pb-24 md:pb-0 relative overflow-x-hidden">
@@ -101,125 +83,111 @@ const App: React.FC = () => {
           <div className="relative z-10 w-full overflow-hidden">
               <CountdownTimer variant="sticky" />
               
-              <Hero />
+              <div className="perf-hardware-accel">
+                <Hero />
+              </div>
               
-              <ScrollReveal delay={0} duration={600} yOffset={20}>
-                  <SocialProof />
-              </ScrollReveal>
-              
-              <ScrollReveal delay={0} duration={1000} yOffset={40} threshold={0.2}>
-                  <div className="py-8 md:py-12 text-center max-w-4xl mx-auto px-6">
-                      <p className="text-lg md:text-2xl text-gray-300 leading-relaxed font-light font-serif italic">
-                          To so strategije, ki jih uporabljajo <span className="text-white font-bold">digitalni ustvarjalci</span> za gradnjo vplivnih AI blagovnih znamk in
-                          <span className="text-white font-bold border-b border-brand-gold not-italic font-sans"> doseganje izjemnih rezultatov.</span>
-                      </p>
-                      <p className="text-gray-600 mt-4 text-[10px] md:text-sm font-bold uppercase tracking-widest font-sans">
-                          Izobraževalni program prilagojen ambicioznim začetnikom.
-                      </p>
-                  </div>
-              </ScrollReveal>
+              <Suspense fallback={<SectionLoader />}>
+                <section className="perf-section-visibility">
+                  <ScrollReveal delay={0} duration={600} yOffset={20}>
+                    <SocialProof />
+                  </ScrollReveal>
+                </section>
 
-              <ScrollReveal delay={0} duration={700}>
-                  <Reviews />
-              </ScrollReveal>
+                <section className="perf-section-visibility py-8 md:py-12 text-center max-w-4xl mx-auto px-6">
+                    <p className="text-lg md:text-2xl text-gray-300 leading-relaxed font-light italic">
+                        To so strategije, ki jih uporabljajo <span className="text-white font-bold">digitalni ustvarjalci</span> za gradnjo vplivnih AI blagovnih znamk in
+                        <span className="text-white font-bold border-b border-brand-gold not-italic"> doseganje izjemnih rezultatov.</span>
+                    </p>
+                </section>
 
-              <ScrollReveal duration={800} yOffset={30}>
-                  <ResultsShowcase />
-              </ScrollReveal>
-              
-              <ScrollReveal>
-                  <CommunityResults />
-              </ScrollReveal>
+                <section className="perf-section-visibility">
+                    <Reviews />
+                </section>
 
-              <ScrollReveal>
-                  <Objections />
-              </ScrollReveal>
-              
-              <ScrollReveal>
-                  <Process />
-              </ScrollReveal>
+                <section className="perf-section-visibility">
+                    <ResultsShowcase />
+                </section>
+                
+                <section className="perf-section-visibility">
+                    <CommunityResults />
+                </section>
 
-              <ScrollReveal>
-                  <Paths />
-              </ScrollReveal>
-              
-              <ScrollReveal>
-                  <Challenge />
-              </ScrollReveal>
+                <section className="perf-section-visibility">
+                    <Objections />
+                </section>
+                
+                <section className="perf-section-visibility">
+                    <Process />
+                </section>
 
-              <ScrollReveal>
-                  <Founders />
-              </ScrollReveal>
+                <section className="perf-section-visibility">
+                    <Paths />
+                </section>
+                
+                <section className="perf-section-visibility">
+                    <Challenge />
+                </section>
 
-              <ScrollReveal duration={900} yOffset={40}>
-                  <Sweepstakes />
-              </ScrollReveal>
+                <section className="perf-section-visibility">
+                    <Founders />
+                </section>
 
-              <ScrollReveal duration={1000} yOffset={50} threshold={0.1}>
-                  <Offer />
-              </ScrollReveal>
-              
-              <ScrollReveal>
-                  <Guarantee />
-              </ScrollReveal>
+                <section className="perf-section-visibility">
+                    <Sweepstakes />
+                </section>
 
-              <ScrollReveal>
-                  <FAQ />
-              </ScrollReveal>
+                <section id="offer" className="perf-section-visibility">
+                    <Offer />
+                </section>
+                
+                <section className="perf-section-visibility">
+                    <Guarantee />
+                </section>
+
+                <section className="perf-section-visibility">
+                    <FAQ />
+                </section>
+              </Suspense>
 
               <footer className="text-center py-12 text-gray-600 text-[9px] md:text-xs bg-black border-t border-gray-900 relative z-10 px-4">
-                  <div className="max-w-4xl mx-auto mb-8 leading-relaxed opacity-60">
-                      <p className="font-bold text-gray-500 uppercase tracking-widest mb-2">Omejitev odgovornosti</p>
-                      <p className="mb-2">
-                          Rezultati so primeri izjemnih dosežkov. Ti rezultati <strong className="text-gray-400">niso tipični</strong> in ne zagotavljajo finančnih izidov. Uspeh je odvisen od vašega truda in izvajanja strategij.
-                      </p>
-                  </div>
-
                   <p className="mb-4">© 2026 AI Universa.</p>
                   <div className="flex flex-wrap justify-center gap-x-4 gap-y-2 underline mb-4 opacity-50">
-                      <button onClick={() => navigateTo('terms')} className="hover:text-brand-gold transition-colors">Pogoji</button>
-                      <button onClick={() => navigateTo('rules')} className="hover:text-brand-gold transition-colors">Pravila</button>
-                      <button onClick={() => navigateTo('privacy')} className="hover:text-brand-gold transition-colors">Zasebnost</button>
-                      <button onClick={() => navigateTo('contact')} className="hover:text-brand-gold transition-colors">Kontakt</button>
+                      <button onClick={() => navigateTo('terms')} className="hover:text-brand-gold">Pogoji</button>
+                      <button onClick={() => navigateTo('rules')} className="hover:text-brand-gold">Pravila</button>
+                      <button onClick={() => navigateTo('privacy')} className="hover:text-brand-gold">Zasebnost</button>
+                      <button onClick={() => navigateTo('contact')} className="hover:text-brand-gold">Kontakt</button>
                   </div>
               </footer>
 
-              {/* Sticky Bottom CTA for Mobile - Matches reference image style */}
-              <div className="fixed bottom-0 left-0 right-0 z-[80] px-4 py-3 bg-black/95 backdrop-blur-xl border-t border-white/10 md:hidden animate-in slide-in-from-bottom duration-500 pb-10 safe-area-pb shadow-[0_-10px_40px_rgba(0,0,0,0.8)]">
+              {/* Sticky Bottom CTA for Mobile */}
+              <div className="fixed bottom-0 left-0 right-0 z-[80] px-4 py-3 bg-black/95 backdrop-blur-xl border-t border-white/10 md:hidden pb-10 safe-area-pb">
                   <div className="flex items-center justify-between gap-4 max-w-sm mx-auto">
                       <div className="flex flex-col">
-                          <p className="text-red-500 text-[8px] font-black uppercase tracking-widest mb-0.5 flex items-center gap-1 animate-pulse">
-                              <span className="w-1.5 h-1.5 rounded-full bg-red-500"></span> 
+                          <p className="text-red-500 text-[8px] font-black uppercase tracking-widest flex items-center gap-1">
+                              <span className="w-1.5 h-1.5 rounded-full bg-red-500 animate-pulse"></span> 
                               OMEJENA MESTA!
                           </p>
-                          <div className="flex items-center gap-2">
-                              <span className="text-brand-gold font-black text-lg leading-none">497€<span className="text-[10px] font-normal text-white/50 ml-1">/ leto</span></span>
-                              <span className="text-gray-600 text-[10px] line-through decoration-red-500 decoration-1">6.182€</span>
-                          </div>
+                          <span className="text-brand-gold font-black text-lg">497€</span>
                       </div>
-                      <Button 
-                          onClick={() => setIsMobileCheckoutOpen(true)} 
-                          className="!py-2.5 !px-6 !text-xs !rounded-xl w-auto shrink-0 shadow-lg border-t border-white/20"
-                          autoShimmer
-                      >
+                      <Button onClick={() => setIsMobileCheckoutOpen(true)} className="!py-2.5 !px-6 !text-xs" autoShimmer>
                           PRIDRUŽI SE
                       </Button>
                   </div>
               </div>
 
-              {/* Mobile Checkout Modal Overlay */}
+              {/* Mobile Checkout Modal */}
               {isMobileCheckoutOpen && (
                   <div className="fixed inset-0 z-[100] flex items-end justify-center md:hidden">
                       <div className="absolute inset-0 bg-black/80 backdrop-blur-sm" onClick={() => setIsMobileCheckoutOpen(false)}></div>
                       <div className="bg-[#0a0a0a] border-t border-white/10 rounded-t-3xl w-full p-6 animate-in slide-in-from-bottom duration-300 relative max-h-[90vh] overflow-y-auto">
-                          <button 
-                              onClick={() => setIsMobileCheckoutOpen(false)}
-                              className="absolute top-4 right-4 p-2 bg-white/10 rounded-full text-white z-50"
-                          >
+                          <button onClick={() => setIsMobileCheckoutOpen(false)} className="absolute top-4 right-4 p-2 bg-white/10 rounded-full text-white z-50">
                               <X size={20} />
                           </button>
                           <div className="pt-4">
-                              <CheckoutForm />
+                              <Suspense fallback={<SectionLoader />}>
+                                <CheckoutForm />
+                              </Suspense>
                           </div>
                       </div>
                   </div>
@@ -227,7 +195,7 @@ const App: React.FC = () => {
           </div>
         </div>
       )}
-    </>
+    </Suspense>
   );
 };
 
