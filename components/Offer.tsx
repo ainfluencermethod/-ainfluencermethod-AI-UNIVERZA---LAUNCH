@@ -4,7 +4,7 @@ import { CheckoutForm } from './CheckoutForm';
 
 export const Offer: React.FC = () => {
   return (
-    <section id="offer" className="bg-black relative overflow-hidden">
+    <div className="bg-black relative overflow-hidden">
        {/* High Impact FOMO Banner Section */}
        <div className="bg-black py-8 md:py-20 px-4 border-b border-white/5">
            <div className="max-w-5xl mx-auto text-center flex flex-col items-center">
@@ -166,6 +166,6 @@ export const Offer: React.FC = () => {
                 </div>
             </div>
        </div>
-    </section>
+    </div>
   );
 };

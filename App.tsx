@@ -1,5 +1,5 @@
 import React, { useState, useEffect, Suspense, lazy } from 'react';
-import { X, Loader2 } from 'lucide-react';
+import { Loader2 } from 'lucide-react';
 
 // Critical Components (Loaded immediately)
 import { Hero } from './components/Hero';
@@ -33,7 +33,6 @@ const TermsAndConditions = lazy(() => import('./components/TermsAndConditions').
 const Contact = lazy(() => import('./components/Contact').then(m => ({ default: m.Contact })));
 const ThankYou = lazy(() => import('./components/ThankYou').then(m => ({ default: m.ThankYou })));
 const UpsellModal = lazy(() => import('./components/UpsellModal').then(m => ({ default: m.UpsellModal })));
-const CheckoutForm = lazy(() => import('./components/CheckoutForm').then(m => ({ default: m.CheckoutForm })));
 
 type AppStep = 'landing' | 'upsell' | 'success' | 'rules' | 'privacy' | 'terms' | 'contact';
 
@@ -45,7 +44,6 @@ const SectionLoader = () => (
 
 const App: React.FC = () => {
   const [currentStep, setCurrentStep] = useState<AppStep>('landing');
-  const [isMobileCheckoutOpen, setIsMobileCheckoutOpen] = useState(false);
 
   useEffect(() => {
     const handleUrlChange = () => {
@@ -64,6 +62,13 @@ const App: React.FC = () => {
     const url = step === 'landing' ? '/' : `/?step=${step}`;
     window.history.pushState({}, '', url);
     window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
+  const scrollToOffer = () => {
+    const offerElement = document.getElementById('offer');
+    if (offerElement) {
+      offerElement.scrollIntoView({ behavior: 'smooth' });
+    }
   };
 
   return (
@@ -141,7 +146,7 @@ const App: React.FC = () => {
                     <Sweepstakes />
                 </section>
 
-                <section id="offer" className="perf-section-visibility">
+                <section id="offer" className="perf-section-visibility scroll-mt-24 md:scroll-mt-32">
                     <Offer />
                 </section>
                 
@@ -177,7 +182,7 @@ const App: React.FC = () => {
                   </div>
               </footer>
 
-              {/* Sticky Bottom CTA for Mobile - Enhanced Aesthetic */}
+              {/* Sticky Bottom CTA for Mobile */}
               <div className="fixed bottom-0 left-0 right-0 z-[80] px-4 py-3 bg-black/95 backdrop-blur-2xl border-t border-white/10 md:hidden pb-10 safe-area-pb shadow-[0_-10px_30px_rgba(0,0,0,0.5)]">
                   <div className="flex items-center justify-between gap-4 max-w-sm mx-auto">
                       <div className="flex flex-col">
@@ -187,28 +192,11 @@ const App: React.FC = () => {
                           </p>
                           <span className="text-brand-gold font-black text-xl tracking-tighter">497€</span>
                       </div>
-                      <Button onClick={() => setIsMobileCheckoutOpen(true)} className="!py-3 !px-8 !text-[11px] !gap-2" autoShimmer>
+                      <Button onClick={scrollToOffer} className="!py-3 !px-8 !text-[11px] !gap-2" autoShimmer>
                           PRIDRUŽI SE
                       </Button>
                   </div>
               </div>
-
-              {/* Mobile Checkout Modal */}
-              {isMobileCheckoutOpen && (
-                  <div className="fixed inset-0 z-[100] flex items-end justify-center md:hidden">
-                      <div className="absolute inset-0 bg-black/80 backdrop-blur-sm" onClick={() => setIsMobileCheckoutOpen(false)}></div>
-                      <div className="bg-[#0a0a0a] border-t border-white/10 rounded-t-3xl w-full p-6 animate-in slide-in-from-bottom duration-300 relative max-h-[90vh] overflow-y-auto">
-                          <button onClick={() => setIsMobileCheckoutOpen(false)} className="absolute top-4 right-4 p-2 bg-white/10 rounded-full text-white z-50">
-                              <X size={20} />
-                          </button>
-                          <div className="pt-4">
-                              <Suspense fallback={<SectionLoader />}>
-                                <CheckoutForm />
-                              </Suspense>
-                          </div>
-                      </div>
-                  </div>
-              )}
           </div>
         </div>
       )}

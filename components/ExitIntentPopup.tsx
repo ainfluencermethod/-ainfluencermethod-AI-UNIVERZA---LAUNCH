@@ -9,11 +9,17 @@ export const ExitIntentPopup: React.FC = () => {
     const handleMouseOut = (e: MouseEvent) => {
       // Detect if mouse moves out of the top of the viewport
       if (e.clientY <= 0 && !hasShown) {
-        const lastShown = localStorage.getItem('exit-popup-shown');
-        if (!lastShown) {
+        try {
+          const lastShown = localStorage.getItem('exit-popup-shown');
+          if (!lastShown) {
+            setIsVisible(true);
+            setHasShown(true);
+            localStorage.setItem('exit-popup-shown', 'true');
+          }
+        } catch (err) {
+          // Fallback if localStorage is disabled
           setIsVisible(true);
           setHasShown(true);
-          localStorage.setItem('exit-popup-shown', 'true');
         }
       }
     };
@@ -53,7 +59,7 @@ export const ExitIntentPopup: React.FC = () => {
             </div>
 
             <h2 className="text-3xl md:text-4xl font-black text-black leading-none tracking-tighter mb-4 uppercase">
-                ČAKAJ! <br/> <span className="text-brand-red">NE ZAMUDI...</span>
+                ČAKAJ! <br/> <span className="text-brand-red">NE ZAMUDI!</span>
             </h2>
 
             <p className="text-sm md:text-base text-gray-600 font-bold mb-6 leading-tight max-w-[280px]">

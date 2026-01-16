@@ -1,5 +1,5 @@
 import React, { useEffect, useState, useRef } from 'react';
-import { VolumeX, Volume2, Play, Pause, Users } from 'lucide-react';
+import { VolumeX, Volume2, Play, Pause } from 'lucide-react';
 
 interface VideoDemoProps {
   videoId: string;
@@ -10,14 +10,9 @@ export const VideoDemo: React.FC<VideoDemoProps> = ({ videoId, thumbnailUrl }) =
   const [isInitialOverlayActive, setIsInitialOverlayActive] = useState(true);
   const [isMuted, setIsMuted] = useState(true);
   const [isPlaying, setIsPlaying] = useState(true);
-  const [viewerCount, setViewerCount] = useState(844);
   const wistiaApiRef = useRef<any>(null);
 
   useEffect(() => {
-    const interval = setInterval(() => {
-      setViewerCount(prev => prev + Math.floor(Math.random() * 5) - 2);
-    }, 5000);
-
     const injectMainScript = () => {
       if (!document.getElementById("wistia-e-v1")) {
         const script = document.createElement('script');
@@ -59,7 +54,6 @@ export const VideoDemo: React.FC<VideoDemoProps> = ({ videoId, thumbnailUrl }) =
     });
 
     return () => {
-      clearInterval(interval);
       if (wistiaApiRef.current) {
         wistiaApiRef.current.remove();
       }
@@ -159,16 +153,6 @@ export const VideoDemo: React.FC<VideoDemoProps> = ({ videoId, thumbnailUrl }) =
           className="absolute inset-0 z-[60] cursor-pointer flex flex-col items-center justify-center bg-cover bg-center"
           style={thumbnailUrl ? { backgroundImage: `linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.8)), url('${thumbnailUrl}')` } : { backgroundColor: 'rgba(0,0,0,0.8)' }}
         >
-          {/* Top Left: People Watching (Small Badge) */}
-          <div className="absolute top-2 left-2 md:top-4 md:left-4 z-40">
-              <div className="bg-black/60 backdrop-blur-md border border-white/20 px-2 py-1 rounded-full flex items-center gap-1.5 shadow-xl">
-                <Users size={10} className="text-red-500" />
-                <span className="text-[7px] md:text-[9px] font-black text-white uppercase tracking-wider">
-                  {viewerCount} LJUDI GLEDA
-                </span>
-              </div>
-          </div>
-
           {/* Top Center: Klikni za zvok (Red Pill - Matches Image) */}
           <div className="absolute top-2 md:top-4 left-1/2 -translate-x-1/2 z-40">
               <div className="bg-[#ef4444] text-white px-3 py-1.5 md:px-5 md:py-2 rounded-full shadow-lg flex items-center gap-2 border border-white/20 animate-pulse-red-lite">

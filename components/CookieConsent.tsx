@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from 'react';
 import { Shield, X } from 'lucide-react';
 import { Button } from './Button';
@@ -7,21 +6,31 @@ export const CookieConsent: React.FC = () => {
   const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
-    const consent = localStorage.getItem('cookie-consent');
-    if (!consent) {
-      // Small delay for better UX
+    try {
+      const consent = localStorage.getItem('cookie-consent');
+      if (!consent) {
+        // Small delay for better UX
+        const timer = setTimeout(() => setIsVisible(true), 1500);
+        return () => clearTimeout(timer);
+      }
+    } catch (err) {
+      // Fallback for private browsing / blocked localStorage
       const timer = setTimeout(() => setIsVisible(true), 1500);
       return () => clearTimeout(timer);
     }
   }, []);
 
   const handleAccept = () => {
-    localStorage.setItem('cookie-consent', 'accepted');
+    try {
+      localStorage.setItem('cookie-consent', 'accepted');
+    } catch (err) {}
     setIsVisible(false);
   };
 
   const handleDecline = () => {
-    localStorage.setItem('cookie-consent', 'declined');
+    try {
+      localStorage.setItem('cookie-consent', 'declined');
+    } catch (err) {}
     setIsVisible(false);
   };
 
