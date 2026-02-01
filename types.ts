@@ -1,11 +1,12 @@
-export interface Founder {
-  name: string;
-  role: string;
-  image: string;
-  description: string[];
+import React from 'react';
+
+export interface FeatureItem {
+  title: string;
+  description: string;
+  icon: React.ComponentType<{ className?: string }>;
 }
 
-export interface RevenueData {
+export interface RoadmapProps {
   name: string;
-  value: number;
+  points: string[];
 }
