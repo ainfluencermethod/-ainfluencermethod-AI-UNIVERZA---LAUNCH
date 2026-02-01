@@ -1,48 +1,76 @@
+
 import React from 'react';
-import { ArrowLeft, Mail, MessageSquare } from 'lucide-react';
+import { ArrowLeft, Mail, MapPin, Building, Instagram } from 'lucide-react';
 
-interface Props {
-  onBack: () => void;
-}
-
-export const Contact: React.FC<Props> = ({ onBack }) => {
+export const Contact: React.FC = () => {
   return (
-    <div className="min-h-screen bg-[#0B0C15] py-20 px-4 sm:px-6 lg:px-8">
-      <div className="max-w-4xl mx-auto">
-        <button onClick={onBack} className="flex items-center gap-2 text-indigo-400 hover:text-indigo-300 transition-colors mb-8 group">
-          <ArrowLeft className="w-5 h-5 group-hover:-translate-x-1 transition-transform" />
-          Nazaj
-        </button>
-
-        <div className="glass-card p-8 sm:p-12 rounded-3xl border border-white/10 shadow-2xl flex flex-col items-center text-center space-y-8">
-          <div className="w-20 h-20 bg-indigo-500/10 rounded-full flex items-center justify-center">
-            <MessageSquare className="w-10 h-10 text-indigo-400" />
-          </div>
-          
-          <div className="space-y-4">
-            <h1 className="text-4xl font-black text-white tracking-tight">Kontaktirajte nas</h1>
-            <p className="text-gray-400 max-w-md mx-auto">
-              Imate vprašanje glede AI Univerze ali vašega vpisa? Naša ekipa vam je na voljo.
-            </p>
-          </div>
-
-          <a 
-            href="mailto:Pici@aiuniverza.si" 
-            className="group flex flex-col items-center gap-4 p-8 rounded-2xl bg-white/5 border border-white/10 hover:border-indigo-500/50 transition-all w-full max-w-sm"
-          >
-            <div className="w-12 h-12 bg-indigo-500/20 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform">
-              <Mail className="w-6 h-6 text-indigo-400" />
-            </div>
-            <div>
-              <p className="text-sm text-gray-500 uppercase font-bold tracking-widest mb-1">Pišite nam na</p>
-              <p className="text-2xl font-bold text-white">Pici@aiuniverza.si</p>
-            </div>
-          </a>
-
-          <div className="pt-8 text-xs text-gray-600">
-            3PM d.o.o., Prušnikova ulica 19, 1210 Ljubljana
-          </div>
+    <div className="min-h-screen bg-black text-gray-300 font-sans p-6 md:p-12 relative flex items-center justify-center">
+      <div className="max-w-2xl w-full">
+        <div className="mb-8">
+            <a href="/" className="inline-flex items-center gap-2 text-brand-gold hover:text-white transition-colors uppercase font-bold text-xs tracking-widest">
+                <ArrowLeft size={16} /> Domov
+            </a>
         </div>
+
+        <div className="bg-card-bg border border-white/10 rounded-[2.5rem] p-8 md:p-12 shadow-2xl relative overflow-hidden">
+            <div className="absolute top-0 right-0 w-32 h-32 bg-brand-gold/5 blur-3xl rounded-full"></div>
+            
+            <h1 className="text-4xl font-serif font-black text-white mb-8 uppercase tracking-tight">
+                Stopi v <span className="text-brand-gold italic">stik</span>
+            </h1>
+
+            <div className="space-y-8">
+                <div className="flex gap-4">
+                    <div className="bg-white/5 p-3 rounded-xl h-fit">
+                        <Mail className="text-brand-gold" size={24} />
+                    </div>
+                    <div>
+                        <p className="text-gray-500 text-xs font-bold uppercase tracking-widest mb-1">Email</p>
+                        <a href="mailto:pici@aiuniverza.si" className="text-white font-bold text-lg hover:text-brand-gold transition-colors">
+                            pici@aiuniverza.si
+                        </a>
+                        <p className="text-gray-500 text-sm mt-1 italic">Odgovorimo v roku 24-48 ur.</p>
+                    </div>
+                </div>
+
+                <div className="flex gap-4">
+                    <div className="bg-white/5 p-3 rounded-xl h-fit">
+                        <Instagram className="text-brand-gold" size={24} />
+                    </div>
+                    <div>
+                        <p className="text-gray-500 text-xs font-bold uppercase tracking-widest mb-1">Social Media</p>
+                        <a href="https://instagram.com/nepridiprav" target="_blank" className="text-white font-bold text-lg hover:text-brand-gold transition-colors">
+                            @nepridiprav
+                        </a>
+                    </div>
+                </div>
+
+                <div className="border-t border-white/5 pt-8">
+                    <h3 className="text-white font-bold mb-4 uppercase text-sm tracking-widest opacity-50">Podatki o podjetju</h3>
+                    <div className="space-y-4">
+                        <div className="flex gap-4">
+                            <Building className="text-gray-600" size={20} />
+                            <div>
+                                <p className="text-white font-medium">3PM d.o.o.</p>
+                                <p className="text-gray-500 text-sm">Davčna številka: SI 29078750</p>
+                                <p className="text-gray-500 text-sm">Matična številka: 9861459000</p>
+                            </div>
+                        </div>
+                        <div className="flex gap-4">
+                            <MapPin className="text-gray-600" size={20} />
+                            <p className="text-gray-500 text-sm">
+                                Prušnikova ulica 19<br/>
+                                1210 Ljubljana - Šentvid
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <p className="mt-8 text-center text-gray-600 text-xs">
+            Imate vprašanje glede nakupa ali uporabe platforme? Pišite nam in z veseljem vam bomo pomagali.
+        </p>
       </div>
     </div>
   );
